@@ -10,6 +10,7 @@ const config: Config = {
 		extend: {
 			fontFamily: {
 				raleway: ['Raleway', 'sans-serif'],
+				montserrat: ['Montserrat', 'sans-serif'],
 			},
 			colors: {
 				darkBlue: '#10598f',

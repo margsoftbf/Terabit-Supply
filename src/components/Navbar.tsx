@@ -8,6 +8,8 @@ import {
 	ShoppingBagIcon,
 } from '@heroicons/react/24/outline';
 import logo from '../../public/assets/logo.png';
+import { useState } from 'react';
+import Cart from './Cart';
 
 const navigation = [
 	{ name: 'Home', href: '#', current: true },
@@ -21,11 +23,16 @@ const navigation = [
 ];
 
 const Navbar = () => {
+	const [isCartOpen, setCartOpen] = useState(false);
+	const toggleCart = () => {
+		console.log('Przełączanie stanu koszyka');
+		setCartOpen(!isCartOpen);
+	};
 	return (
 		<Disclosure as='header' className='bg-white shadow'>
 			{({ open }) => (
 				<>
-					<div className='mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-gray-200 lg:px-8'>
+					<div className='mx-auto max-w-8xl px-2 sm:px-4 lg:divide-y lg:divide-gray-200 lg:px-8'>
 						<div className='relative flex h-16 justify-between'>
 							<div className='relative z-10 flex px-2 lg:px-0'>
 								<div className='flex flex-shrink-0 items-center'>
@@ -78,15 +85,16 @@ const Navbar = () => {
 							<div className='hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center'>
 								<button
 									type='button'
-									className='relative flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+									className='relative flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-darkBlue focus:ring-offset-2'
 								>
 									<span className='absolute -inset-1.5' />
-									<span className='sr-only'>View notifications</span>
+									<span className='sr-only'>Wishlist</span>
 									<HeartIcon className='h-6 w-6' aria-hidden='true' />
 								</button>
 								<div className='ml-4 flow-root lg:ml-8'>
 									<a href='#' className='group -m-2 flex items-center p-2'>
 										<ShoppingBagIcon
+											onClick={toggleCart}
 											className='h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500'
 											aria-hidden='true'
 										/>
@@ -95,6 +103,7 @@ const Navbar = () => {
 										</span>
 										<span className='sr-only'>items in cart, view bag</span>
 									</a>
+									{isCartOpen && <Cart />}
 								</div>
 							</div>
 						</div>
@@ -108,8 +117,8 @@ const Navbar = () => {
 									href={item.href}
 									className={`${
 										item.current
-											? 'bg-gray-100 text-gray-900'
-											: 'text-gray-900 hover:bg-gray-50 hover:text-gray-900'
+											? 'bg-gray-200 text-gray-900'
+											: 'text-gray-900 hover:bg-gray-100 hover:text-gray-900'
 									}
 										inline-flex items-center rounded-md py-2 px-3 text-sm font-medium
 									`}
@@ -154,6 +163,7 @@ const Navbar = () => {
 								<div className='ml-4 flow-root lg:ml-8'>
 									<a href='#' className='group -m-2 flex items-center p-2'>
 										<ShoppingBagIcon
+											onClick={toggleCart}
 											className='h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500'
 											aria-hidden='true'
 										/>
@@ -162,6 +172,7 @@ const Navbar = () => {
 										</span>
 										<span className='sr-only'>items in cart, view bag</span>
 									</a>
+									{isCartOpen && <Cart />}
 								</div>
 							</div>
 						</div>

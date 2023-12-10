@@ -30,7 +30,7 @@ const heroData = [
 
 const Hero = () => {
 	return (
-		<>
+		<div className='m-2 2xl:m-0'>
 			<Swiper
 				spaceBetween={30}
 				centeredSlides={true}
@@ -43,7 +43,7 @@ const Hero = () => {
 					clickable: true,
 				}}
 				modules={[Autoplay, Pagination]}
-				className='mx-auto max-w-7xl h-[500px] px-2 sm:px-4 lg:px-8 relative mt-2'
+				className='mx-auto max-w-8xl h-[500px] px-2 sm:px-4 lg:px-8 relative mt-2 rounded-md'
 			>
 				{heroData.map((hero) => (
 					<SwiperSlide key={hero.id}>
@@ -53,7 +53,7 @@ const Hero = () => {
 							className='absolute inset-0 z-10 h-full w-full object-cover'
 						/>
 						<div className='absolute w-full h-full bg-black/50 left-0 z-10'></div>
-						<div className='absolute inset-0 z-20 flex flex-col justify-center items-start text-white ml-4 lg:items-center lg:ml-0'>
+						<div className='absolute inset-0 z-20 flex flex-col justify-center items-start text-white ml-4 md:items-center lg:ml-0'>
 							<p className='text-lg font-raleway font-semibold'>{hero.title}</p>
 							<h2 className='text-2xl font-bold mt-4'>{hero.subtitle}</h2>
 							<p className='text-lg mt-4 font-semibold'>{hero.price}</p>
@@ -67,7 +67,7 @@ const Hero = () => {
 					</SwiperSlide>
 				))}
 			</Swiper>
-		</>
+		</div>
 	);
 };
 

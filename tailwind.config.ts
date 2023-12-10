@@ -16,6 +16,9 @@ const config: Config = {
 				ownBlue: '#7FB3D5',
 				ownGray: '#BFC9CA',
 			},
+			maxWidth: {
+				'8xl': '1440px',
+			},
 		},
 	},
 	plugins: [require('@tailwindcss/forms')],

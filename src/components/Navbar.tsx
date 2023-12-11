@@ -10,10 +10,15 @@ import {
 import logo from '../../public/assets/logo.png';
 import { useState } from 'react';
 import Cart from './Cart';
+import Wishlist from './Wishlist';
+import { useSelector } from 'react-redux';
+import Link from 'next/link';
+import { Link as ScrollLink } from 'react-scroll';
+import { useRouter } from 'next/router';
 
 const navigation = [
-	{ name: 'Home', href: '#', current: true },
-	{ name: 'Category', href: '#', current: false },
+	{ name: 'Home', href: '/', hash: '/', current: true },
+	{ name: 'Category', href: 'categories', hash: 'categories', current: false },
 	{ name: 'About us', href: '#', current: false },
 	{ name: 'Popular', href: '#', current: false },
 	{ name: 'Deals', href: '#', current: false },
@@ -22,20 +27,61 @@ const navigation = [
 	{ name: 'Contact', href: '#', current: false },
 ];
 
+interface CartItem {
+	id: string;
+	name: string;
+	quantity: number;
+	price: number;
+}
+
+interface CartState {
+	items: Record<string, CartItem>;
+}
+
 const Navbar = () => {
 	const [isCartOpen, setCartOpen] = useState(false);
+	const [isWishlistOpen, setWishlistOpen] = useState(false);
+	const selectCartItemsCount = (state: { cart: CartState }) => {
+		return Object.values(state.cart.items).reduce(
+			(total: number, item: CartItem) => total + item.quantity,
+			0
+		);
+	};
+	const cartItemsCount = useSelector(selectCartItemsCount);
+	const router = useRouter();
 	const toggleCart = () => {
-		console.log('Przełączanie stanu koszyka');
+		setWishlistOpen(false);
 		setCartOpen(!isCartOpen);
 	};
+
+	const toggleWishlist = () => {
+		setCartOpen(false);
+		setWishlistOpen(!isWishlistOpen);
+	};
+	const [activeLink, setActiveLink] = useState('/');
+	const isHomePage = router.pathname === '/';
+
+	const handleScroll = (itemHref: string) => {
+		const offset = 500;
+		const element = document.getElementById(itemHref);
+		if (element) {
+			const elementPosition = element.getBoundingClientRect().top;
+			const offsetPosition = elementPosition + window.pageYOffset - offset;
+			window.scrollTo({
+				top: offsetPosition,
+				behavior: 'smooth',
+			});
+		}
+	};
+
 	return (
-		<Disclosure as='header' className='bg-white shadow'>
+		<Disclosure as='header' className='bg-white shadow sticky top-0 z-50'>
 			{({ open }) => (
 				<>
 					<div className='mx-auto max-w-8xl px-2 sm:px-4 lg:divide-y lg:divide-gray-200 lg:px-8'>
 						<div className='relative flex h-16 justify-between'>
 							<div className='relative z-10 flex px-2 lg:px-0'>
-								<div className='flex flex-shrink-0 items-center'>
+								<Link href='/' className='flex flex-shrink-0 items-center'>
 									<img
 										className='h-10 w-auto mr-2'
 										src={logo.src}
@@ -47,7 +93,7 @@ const Navbar = () => {
 										</span>
 										erabit Supply
 									</span>
-								</div>
+								</Link>
 							</div>
 							<div className='relative z-0 flex flex-1 items-center justify-center px-2 sm:absolute sm:inset-0'>
 								<div className='w-full sm:max-w-xs'>
@@ -84,8 +130,9 @@ const Navbar = () => {
 							</div>
 							<div className='hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center'>
 								<button
+									onClick={toggleWishlist}
 									type='button'
-									className='relative flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-darkBlue focus:ring-offset-2'
+									className='relative flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none '
 								>
 									<span className='absolute -inset-1.5' />
 									<span className='sr-only'>Wishlist</span>
@@ -99,11 +146,12 @@ const Navbar = () => {
 											aria-hidden='true'
 										/>
 										<span className='ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800'>
-											0
+											{cartItemsCount}
 										</span>
 										<span className='sr-only'>items in cart, view bag</span>
 									</a>
 									{isCartOpen && <Cart />}
+									{isWishlistOpen && <Wishlist />}
 								</div>
 							</div>
 						</div>
@@ -111,22 +159,38 @@ const Navbar = () => {
 							className='hidden lg:flex lg:justify-center lg:space-x-8 lg:py-2'
 							aria-label='Global'
 						>
-							{navigation.map((item) => (
-								<a
-									key={item.name}
-									href={item.href}
-									className={`${
-										item.current
-											? 'bg-gray-200 text-gray-900'
-											: 'text-gray-900 hover:bg-gray-100 hover:text-gray-900'
-									}
-										inline-flex items-center rounded-md py-2 px-3 text-sm font-medium
-									`}
-									aria-current={item.current ? 'page' : undefined}
-								>
-									{item.name}
-								</a>
-							))}
+							{navigation.map((item) =>
+								isHomePage ? (
+									<ScrollLink
+										key={item.name}
+										to={item.href}
+										smooth={true}
+										offset={-120}
+										className={`${
+											activeLink === item.href
+												? 'bg-gray-200 text-gray-900'
+												: 'text-gray-900 hover:bg-gray-100 hover:text-gray-900'
+										}
+									inline-flex items-center rounded-md py-2 px-3 text-sm font-medium cursor-pointer`}
+										aria-current={activeLink === item.href ? 'page' : undefined}
+										onClick={() => setActiveLink(item.href)}
+									>
+										{item.name}
+									</ScrollLink>
+								) : (
+									<Link
+										href={'/'}
+										key={item.name}
+										className={`${
+											router.asPath === item.href
+												? 'bg-gray-200 text-gray-900'
+												: 'text-gray-900 hover:bg-gray-100 hover:text-gray-900'
+										} inline-flex items-center rounded-md py-2 px-3 text-sm font-medium cursor-pointer`}
+									>
+										{item.name}
+									</Link>
+								)
+							)}
 						</nav>
 					</div>
 
@@ -135,16 +199,19 @@ const Navbar = () => {
 							{navigation.map((item) => (
 								<Disclosure.Button
 									key={item.name}
-									as='a'
-									href={item.href}
+									onClick={() => {
+										if (isHomePage) {
+											handleScroll(item.href);
+										} else {
+											router.push('/#' + item.href);
+										}
+									}}
 									className={`${
-										item.current
+										activeLink === item.href
 											? 'bg-gray-100 text-gray-900'
 											: 'text-gray-900 hover:bg-gray-50 hover:text-gray-900'
-									}
-										block rounded-md py-2 px-3 text-base font-medium
-									`}
-									aria-current={item.current ? 'page' : undefined}
+									} block rounded-md py-2 px-3 text-base font-medium`}
+									aria-current={activeLink === item.href ? 'page' : undefined}
 								>
 									{item.name}
 								</Disclosure.Button>
@@ -153,8 +220,9 @@ const Navbar = () => {
 						<div className='border-t border-gray-200 pb-3 pt-4'>
 							<div className='flex items-center px-4'>
 								<button
+									onClick={toggleWishlist}
 									type='button'
-									className='relative ml-auto flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+									className='relative ml-auto flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500'
 								>
 									<span className='absolute -inset-1.5' />
 									<span className='sr-only'>Wishlist</span>
@@ -168,11 +236,12 @@ const Navbar = () => {
 											aria-hidden='true'
 										/>
 										<span className='ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800'>
-											0
+											{cartItemsCount}
 										</span>
 										<span className='sr-only'>items in cart, view bag</span>
 									</a>
 									{isCartOpen && <Cart />}
+									{isWishlistOpen && <Wishlist />}
 								</div>
 							</div>
 						</div>

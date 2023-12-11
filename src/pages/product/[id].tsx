@@ -10,7 +10,7 @@ const Id = () => {
 	const product = productsData.find((p) => p.id === id);
 
 	if (!product) {
-		return <div>Produkt nie znaleziony</div>;
+		return <div>No found !</div>;
 	}
 
 	const dispatch = useDispatch();

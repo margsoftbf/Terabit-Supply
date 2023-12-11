@@ -1,7 +1,9 @@
 import { useSelector } from 'react-redux';
 import { CartState } from '../types/types';
 const Cart = () => {
-	const cartItems = useSelector((state: { cart: CartState }) => state.cart.items);
+	const cartItems = useSelector(
+		(state: { cart: CartState }) => state.cart.items
+	);
 
 	const totalPrice = Object.values(cartItems).reduce((total, item) => {
 		return total + item.price * item.quantity;

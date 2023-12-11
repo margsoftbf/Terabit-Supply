@@ -1,6 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { CartItem } from '../types/types';
 
-const initialState = {
+interface CartState {
+	items: Record<string, CartItem>;
+}
+
+const initialState: CartState = {
 	items: {},
 };
 

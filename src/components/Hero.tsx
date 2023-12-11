@@ -30,7 +30,7 @@ const heroData = [
 
 const Hero = () => {
 	return (
-		<div className='m-2 2xl:m-0'>
+		<div className='m-2 2xl:m-0' id='/'>
 			<Swiper
 				spaceBetween={30}
 				centeredSlides={true}

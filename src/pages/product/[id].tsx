@@ -21,10 +21,10 @@ const Id = () => {
 
 	return (
 		<div>
-			<button onClick={() => router.back()}>Cofnij</button>
+			<button onClick={() => router.back()}>Back</button>
 			<h1>{product.name}</h1>
 			<p>{product.description}</p>
-			<button onClick={handleAddToCart}>Dodaj do koszyka</button>
+			<button onClick={handleAddToCart}>Add to bag</button>
 		</div>
 	);
 };

@@ -16,24 +16,9 @@ import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import {navigation} from '../data/data';
+import { CartItem } from '../types/types';
 
-const navigation = [
-	{ name: 'Home', href: '/', hash: '/', current: true },
-	{ name: 'Category', href: 'categories', hash: 'categories', current: false },
-	{ name: 'About us', href: '#', current: false },
-	{ name: 'Popular', href: '#', current: false },
-	{ name: 'Deals', href: '#', current: false },
-	{ name: 'Newsletter', href: '#', current: false },
-	{ name: 'Testimonials', href: '#', current: false },
-	{ name: 'Contact', href: '#', current: false },
-];
-
-interface CartItem {
-	id: string;
-	name: string;
-	quantity: number;
-	price: number;
-}
 
 interface CartState {
 	items: Record<string, CartItem>;
@@ -42,14 +27,18 @@ interface CartState {
 const Navbar = () => {
 	const [isCartOpen, setCartOpen] = useState(false);
 	const [isWishlistOpen, setWishlistOpen] = useState(false);
+	const router = useRouter();
+	const [activeLink, setActiveLink] = useState('/');
+	const isHomePage = router.pathname === '/';
+	
 	const selectCartItemsCount = (state: { cart: CartState }) => {
 		return Object.values(state.cart.items).reduce(
 			(total: number, item: CartItem) => total + item.quantity,
 			0
-		);
-	};
-	const cartItemsCount = useSelector(selectCartItemsCount);
-	const router = useRouter();
+			);
+		};
+	
+		const cartItemsCount = useSelector(selectCartItemsCount);
 	const toggleCart = () => {
 		setWishlistOpen(false);
 		setCartOpen(!isCartOpen);
@@ -59,8 +48,7 @@ const Navbar = () => {
 		setCartOpen(false);
 		setWishlistOpen(!isWishlistOpen);
 	};
-	const [activeLink, setActiveLink] = useState('/');
-	const isHomePage = router.pathname === '/';
+	
 
 	const handleScroll = (itemHref: string) => {
 		const offset = 500;

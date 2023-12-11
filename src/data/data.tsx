@@ -1,3 +1,45 @@
+export const navigation = [
+	{ name: 'Home', href: '/', hash: '/', current: true },
+	{ name: 'Category', href: 'categories', hash: 'categories', current: false },
+	{ name: 'About us', href: '#', current: false },
+	{ name: 'Popular', href: '#', current: false },
+	{ name: 'Deals', href: '#', current: false },
+	{ name: 'Newsletter', href: '#', current: false },
+	{ name: 'Testimonials', href: '#', current: false },
+	{ name: 'Contact', href: '#', current: false },
+];
+
+import procesorSmall from '../../public/assets/hero/procesor-small.webp';
+import gpuSmall from '../../public/assets/hero/gpu-small.webp';
+import procesorBig from '../../public/assets/hero/procesor-big.webp';
+import gpuBig from '../../public/assets/hero/gpu-big.webp';
+
+export const heroData = [
+	{
+		id: 1,
+		src: procesorSmall,
+		srcMd: procesorBig,
+		alt: 'cpu picture',
+		title: 'Choose your processor',
+		subtitle: 'Intel - Core i9-13900K',
+		price: '$543.33 or 55.55/mo. for 24 mo.',
+		btn: 'Shop now',
+	},
+	{
+		id: 2,
+		src: gpuSmall,
+		scrMd: gpuBig,
+		alt: 'gpu picture',
+		title: 'Choose your GPU',
+		subtitle: 'NVIDIA - GeForce RTX 3090 Ti',
+		price: '$1243.33 or 95.55/mo. for 24 mo.',
+		btn: 'Shop now',
+	},
+];
+
+
+
+
 export const categoriesData = [
 	{
 		id: '1',
@@ -150,3 +192,4 @@ export const productsData = [
 		price: 100,
 	},
 ];
+

@@ -1,16 +1,13 @@
 import { useSelector } from 'react-redux';
+import { WishlistItem } from '../types/types';
 
-interface WishlistItem {
-	id: string;
-	name: string;
-}
 const Wishlist = () => {
 	const wishlistItems = useSelector((state: any) => state.wishlist.items);
 
 	return (
 		<div className='absolute h-[500px] w-[500px] z-50'>
 			{wishlistItems.length === 0 ? (
-				<p>Twoja lista życzeń jest pusta.</p>
+				<p>Your wishlist is empty.</p>
 			) : (
 				wishlistItems.map((item: WishlistItem) => (
 					<div key={item.id} className='wishlist-item'>

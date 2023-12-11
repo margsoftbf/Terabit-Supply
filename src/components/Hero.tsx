@@ -4,34 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination } from 'swiper/modules';
-import procesorSmall from '../../public/assets/hero/procesor-small.webp';
-import gpuSmall from '../../public/assets/hero/gpu-small.webp';
-import procesorBig from '../../public/assets/hero/procesor-big.webp';
-import gpuBig from '../../public/assets/hero/gpu-big.webp';
-import Image from 'next/image';
-
-const heroData = [
-	{
-		id: 1,
-		src: procesorSmall,
-		srcMd: procesorBig,
-		alt: 'cpu picture',
-		title: 'Choose your processor',
-		subtitle: 'Intel - Core i9-13900K',
-		price: '$543.33 or 55.55/mo. for 24 mo.',
-		btn: 'Shop now',
-	},
-	{
-		id: 2,
-		src: gpuSmall,
-		scrMd: gpuBig,
-		alt: 'gpu picture',
-		title: 'Choose your GPU',
-		subtitle: 'NVIDIA - GeForce RTX 3090 Ti',
-		price: '$1243.33 or 95.55/mo. for 24 mo.',
-		btn: 'Shop now',
-	},
-];
+import { heroData } from '../data/data';
 
 const Hero = () => {
 	return (

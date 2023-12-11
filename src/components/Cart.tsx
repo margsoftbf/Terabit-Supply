@@ -11,7 +11,7 @@ const Cart = () => {
 
 	return (
 		<div className='absolute h-[500px] w-[500px] z-50'>
-			<h2>Koszyk</h2>
+			<h2>Cart</h2>
 			<ul>
 				{Object.values(cartItems).map((item) => (
 					<li key={item.id}>
@@ -19,7 +19,7 @@ const Cart = () => {
 					</li>
 				))}
 			</ul>
-			<p>Suma całkowita: {totalPrice}</p>
+			<p>Total price: {totalPrice}</p>
 		</div>
 	);
 };

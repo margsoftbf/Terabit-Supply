@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { categoriesData } from '../data/data';
-import Image from 'next/image';
 
 const Category = () => {
 	return (

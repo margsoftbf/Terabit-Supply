@@ -7,17 +7,8 @@ import { addToCart } from '../../store/cartSlice';
 import { useState } from 'react';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { addToWishlist } from '../../store/wishlistSlice';
-interface ProductProps {
-	id: string;
-	categoryId: string;
-	name: string;
-	description: string;
-	img?: string;
-	imgAlt?: string;
-	rating: number;
-	reviewCount: number;
-	price: number;
-}
+import { ProductProps } from '../../types/types';
+
 const CategoryPage = () => {
 	const [addedProductId, setAddedProductId] = useState<string | null>(null);
 	const [addedProductIdWishlist, setAddedProductIdWishlist] = useState<

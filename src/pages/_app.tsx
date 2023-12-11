@@ -12,6 +12,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 				<title>Terabit Supply PC Shop</title>
 				<meta name='description' content='Terabit Supply PC Shop' />
 				<link rel='icon' href='/favicon.ico' />
+				<meta httpEquiv="Content-Language" content="en" />
 			</Head>
 			<Navbar />
 			<Component {...pageProps} />

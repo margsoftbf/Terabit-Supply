@@ -1,12 +1,10 @@
 import Link from 'next/link';
 import { categoriesData } from '../data/data';
+import Image from 'next/image';
 
 const Category = () => {
 	return (
-		<div
-			className='text-center mt-8 max-w-6xl m-auto'
-			id='categories'
-		>
+		<div className='text-center mt-8 max-w-6xl m-auto' id='categories'>
 			<h2 className='text-xl font-medium tracking-tight text-gray-900 sm:text-3xl my-4 font-montserrat'>
 				Shop by Category
 			</h2>

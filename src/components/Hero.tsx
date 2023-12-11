@@ -8,6 +8,7 @@ import procesorSmall from '../../public/assets/hero/procesor-small.webp';
 import gpuSmall from '../../public/assets/hero/gpu-small.webp';
 import procesorBig from '../../public/assets/hero/procesor-big.webp';
 import gpuBig from '../../public/assets/hero/gpu-big.webp';
+import Image from 'next/image';
 
 const heroData = [
 	{

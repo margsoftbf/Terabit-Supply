@@ -7,7 +7,7 @@ import {
 	HeartIcon,
 	ShoppingBagIcon,
 } from '@heroicons/react/24/outline';
-import logo from '../../public/assets/logo.png';
+import logo from '../../public/assets/logo.webp';
 import { useState } from 'react';
 import Cart from './Cart';
 import Wishlist from './Wishlist';
@@ -15,6 +15,7 @@ import { useSelector } from 'react-redux';
 import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 const navigation = [
 	{ name: 'Home', href: '/', hash: '/', current: true },
@@ -82,10 +83,10 @@ const Navbar = () => {
 						<div className='relative flex h-16 justify-between'>
 							<div className='relative z-10 flex px-2 lg:px-0'>
 								<Link href='/' className='flex flex-shrink-0 items-center'>
-									<img
-										className='h-10 w-auto mr-2'
-										src={logo.src}
+									<Image
+										src={logo}
 										alt='Terabit supply'
+										className='mr-2 h-10 w-10'
 									/>
 									<span className='hidden lg:block font-raleway font-semibold'>
 										<span className='font-extrabold text-darkBlue text-2xl'>

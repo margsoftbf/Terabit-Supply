@@ -4,13 +4,16 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination } from 'swiper/modules';
-import hero1 from '../../public/assets/hero/hero1.webp';
-import hero2 from '../../public/assets/hero/hero2.webp';
+import procesorSmall from '../../public/assets/hero/procesor-small.webp';
+import gpuSmall from '../../public/assets/hero/gpu-small.webp';
+import procesorBig from '../../public/assets/hero/procesor-big.webp';
+import gpuBig from '../../public/assets/hero/gpu-big.webp';
 
 const heroData = [
 	{
 		id: 1,
-		src: hero1,
+		src: procesorSmall,
+		srcMd: procesorBig,
 		alt: 'cpu picture',
 		title: 'Choose your processor',
 		subtitle: 'Intel - Core i9-13900K',
@@ -19,7 +22,8 @@ const heroData = [
 	},
 	{
 		id: 2,
-		src: hero2,
+		src: gpuSmall,
+		scrMd: gpuBig,
 		alt: 'gpu picture',
 		title: 'Choose your GPU',
 		subtitle: 'NVIDIA - GeForce RTX 3090 Ti',
@@ -47,15 +51,23 @@ const Hero = () => {
 			>
 				{heroData.map((hero) => (
 					<SwiperSlide key={hero.id}>
-						<img
-							src={hero.src.src}
-							alt={hero.alt}
-							className='absolute inset-0 z-10 h-full w-full object-cover'
-						/>
+						<picture>
+							{hero.srcMd && (
+								<source media='(min-width: 768px)' srcSet={hero.srcMd.src} />
+							)}
+							<img
+								src={hero.src.src}
+								alt={hero.alt}
+								className='absolute inset-0 z-10 h-full w-full object-cover'
+							/>
+						</picture>
+
 						<div className='absolute w-full h-full bg-black/50 left-0 z-10'></div>
 						<div className='absolute inset-0 z-20 flex flex-col justify-center items-start text-white ml-4 md:items-center lg:ml-0'>
 							<p className='text-lg font-raleway font-semibold'>{hero.title}</p>
-							<h2 className='text-2xl font-bold mt-4'>{hero.subtitle}</h2>
+							<h2 className='text-xl lg:text-2xl font-bold mt-4'>
+								{hero.subtitle}
+							</h2>
 							<p className='text-lg mt-4 font-semibold'>{hero.price}</p>
 							<button
 								type='button'

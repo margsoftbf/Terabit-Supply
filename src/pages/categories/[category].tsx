@@ -38,24 +38,36 @@ const CategoryPage = () => {
 		setTimeout(() => setAddedProductIdWishlist(null), 3000);
 	};
 
+	const [currentPage, setCurrentPage] = useState(1);
+	const productsPerPage = 8;
+	const indexOfLastProduct = currentPage * productsPerPage;
+	const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+	const currentProducts = products.slice(
+		indexOfFirstProduct,
+		indexOfLastProduct
+	);
+	const pageCount = Math.ceil(products.length / productsPerPage);
+	const pageNumbers = [];
+	for (let i = 1; i <= pageCount; i++) {
+		pageNumbers.push(i);
+	}
 	return (
-		<div
-			className='mx-auto max-w-8xl overflow-hidden sm:px-6 lg:px-8'
-		>
-			<div className='md:flex md:items-center md:justify-between my-4'>
+		<div className='mx-auto max-w-8xl overflow-hidden sm:px-6 lg:px-8'>
+			<div className='flex items-center justify-between my-4 mx-2'>
 				<button
 					onClick={() => router.back()}
-					className='flex flex-row  items-center font-medium text-darkBlue hover:text-ownBlue'
+					type='button'
+					className='inline-flex items-center gap-x-1.5 rounded-md bg-darkBlue px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-ownBlue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-darkBlue'
 				>
-					<ArrowLeftIcon className='h-6 w-6' />
-					<span className='text-md'>Back</span>
+					<ArrowLeftIcon className='-ml-0.5 h-5 w-5' aria-hidden='true' />
+					Back
 				</button>
 				<h2 className='text-2xl font-bold tracking-tight text-gray-900'>
 					{categoryName}
 				</h2>
 			</div>
 			<div className='-mx-px gap-2 grid grid-cols-1 sm:grid-cols-2 sm:mx-0 md:grid-cols-3 lg:grid-cols-4'>
-				{products.map((product) => (
+				{currentProducts.map((product) => (
 					<div
 						key={product.id}
 						className='group relative border border-gray-200 p-4 sm:p-6 rounded-md shadow m-2'
@@ -125,6 +137,37 @@ const CategoryPage = () => {
 						)}
 					</div>
 				))}
+			</div>
+			<div className='mx-auto mt-6 m-2 flex max-w-7xl justify-between px-4 text-sm font-medium text-gray-700 sm:px-6 lg:px-8 h-full'>
+				<button
+					onClick={() => setCurrentPage(currentPage - 1)}
+					disabled={currentPage === 1}
+					className='inline-flex h-10 items-center rounded-md border border-gray-300 bg-white px-4 hover:bg-gray-100 focus:border-darkBlue focus:outline-none '
+				>
+					Previous
+				</button>
+				<div className='hidden space-x-2 sm:flex'>
+					{pageNumbers.map((number) => (
+						<button
+							className={`inline-flex h-10 text-base items-center rounded-md border px-4 ${
+								number === currentPage
+									? 'border-darkBlue bg-darkBlue text-white'
+									: 'border-gray-300 bg-white'
+							} ring-1 ring-darkBlue hover:bg-gray-100 focus:border-darkBlue focus:outline-none focus:ring-2 focus:ring-darkBlue focus:ring-opacity-25 focus:ring-offset-1 focus:ring-offset-darkBlue`}
+							key={number}
+							onClick={() => setCurrentPage(number)}
+						>
+							{number}
+						</button>
+					))}
+				</div>
+				<button
+					onClick={() => setCurrentPage(currentPage + 1)}
+					disabled={currentPage === pageCount}
+					className='inline-flex h-10 items-center rounded-md border border-gray-300 bg-white px-4 hover:bg-gray-100 focus:border-darkBlue focus:outline-none'
+				>
+					Next
+				</button>
 			</div>
 		</div>
 	);

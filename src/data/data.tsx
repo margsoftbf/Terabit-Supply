@@ -37,9 +37,6 @@ export const heroData = [
 	},
 ];
 
-
-
-
 export const categoriesData = [
 	{
 		id: '1',
@@ -181,6 +178,42 @@ export const productsData = [
 		price: 299.99,
 	},
 	{
+		id: '9',
+		categoryId: '1',
+		name: 'Intel Core i5-12600KF 3.7 GHz 10-Core',
+		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi iure possimus, nihil a laudantium aspernatur fugit illum eaque itaque alias impedit, mollitia libero autem vitae illo inventore voluptatum eius consectetur expedita quas ex animi odio ut. Quam minima voluptatibus modi autem nihil! Exercitationem optio dolorum, accusantium, dolores soluta distinctio hic autem vitae cumque sunt fugiat laborum voluptas perferendis, id aliquid nisi consectetur non! Perferendis numquam animi quis nobis incidunt iste!',
+		img: 'https://cdna.pcpartpicker.com/static/forever/images/product/01163d618db9518d03041c9997e23bb1.256p.jpg',
+		imgAlt: 'Intel Core i5-12600KF 3.7 GHz 10-Core Box',
+		rating: 4,
+		reviewCount: 127,
+		price: 154.99,
+	},
+	{
+		id: '10',
+		categoryId: '1',
+		name: 'Intel Core i9-12900K 3.2 GHz 16-Core',
+		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi iure possimus, nihil a laudantium aspernatur fugit illum eaque itaque alias impedit, mollitia libero autem vitae illo inventore voluptatum eius consectetur expedita quas ex animi odio ut. Quam minima voluptatibus modi autem nihil! Exercitationem optio dolorum, accusantium, dolores soluta distinctio hic autem vitae cumque sunt fugiat laborum voluptas perferendis, id aliquid nisi consectetur non! Perferendis numquam animi quis nobis incidunt iste!',
+		img: 'https://cdna.pcpartpicker.com/static/forever/images/product/b9d3c68bbf713cdd1211f3792040ce95.256p.jpg',
+		imgAlt: 'Intel Core i9-12900K 3.2 GHz 16-Core Box',
+		rating: 4,
+		reviewCount: 18,
+		price: 339.99,
+	},
+	{
+		id: '11',
+		categoryId: '1',
+		name: 'AMD Ryzen 7 5700G 3.8 GHz 8-Core',
+		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi iure possimus, nihil a laudantium aspernatur fugit illum eaque itaque alias impedit, mollitia libero autem vitae illo inventore voluptatum eius consectetur expedita quas ex animi odio ut. Quam minima voluptatibus modi autem nihil! Exercitationem optio dolorum, accusantium, dolores soluta distinctio hic autem vitae cumque sunt fugiat laborum voluptas perferendis, id aliquid nisi consectetur non! Perferendis numquam animi quis nobis incidunt iste!',
+		img: 'https://cdna.pcpartpicker.com/static/forever/images/product/f599944d7bed683e57062447764ce9d9.256p.jpg',
+		imgAlt: 'AMD Ryzen 7 5700G 3.8 GHz 8-Core Box',
+		rating: 5,
+		reviewCount: 174,
+		price: 275.99,
+	},
+	{
 		id: '2',
 		categoryId: '2',
 		name: 'Produkt 1',
@@ -192,4 +225,3 @@ export const productsData = [
 		price: 100,
 	},
 ];
-

@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { CartState } from '../types/types';
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Popover, Transition } from '@headlessui/react';
 import { productsData } from '../data/data';
-import { removeFromCart } from '@/store/cartSlice';
+import { removeFromCart, clearCart } from '@/store/cartSlice';
 
 interface CartProps {
 	isCartOpen: boolean;
@@ -13,6 +13,8 @@ interface CartProps {
 }
 
 const Cart = ({ isCartOpen, toggleCart, cartItemsCount }: CartProps) => {
+	const [showNotification, setShowNotification] = useState(false);
+
 	const dispatch = useDispatch();
 	const cartItems = useSelector(
 		(state: { cart: CartState }) => state.cart.items
@@ -34,8 +36,27 @@ const Cart = ({ isCartOpen, toggleCart, cartItemsCount }: CartProps) => {
 		dispatch(removeFromCart({ id: productId }));
 	};
 
+	const handleCheckout = () => {
+		setShowNotification(true);
+		setTimeout(() => {
+			setShowNotification(false);
+		}, 3000);
+		dispatch(clearCart());
+		toggleCart();
+	};
+
 	return (
 		<div>
+			{showNotification && (
+				<div
+					className='fixed top-5 left-1/2 transform -translate-x-1/2 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded'
+					role='alert'
+				>
+					<span className='block sm:inline'>
+						Thank you for shopping with us!
+					</span>
+				</div>
+			)}
 			<Popover className='ml-4 flow-root text-sm lg:relative lg:ml-8'>
 				<Popover.Button
 					onClick={toggleCart}
@@ -72,6 +93,11 @@ const Cart = ({ isCartOpen, toggleCart, cartItemsCount }: CartProps) => {
 						<div className='mt-8 '>
 							<div className='flow-root p-2 my-2'>
 								<ul role='list' className='-my-6 divide-y divide-gray-200'>
+									{cartItemsCount === 0 && (
+										<div className='text-center font-semibold'>
+											Your cart is empty.
+										</div>
+									)}
 									{Object.values(cartItems).map((item) => (
 										<li key={item.id} className='flex py-6'>
 											<div className='h-16 w-16 flex-none rounded-md border border-gray-200'>
@@ -129,12 +155,12 @@ const Cart = ({ isCartOpen, toggleCart, cartItemsCount }: CartProps) => {
 								Shipping and taxes calculated at checkout.
 							</p>
 							<div className='mt-6'>
-								<a
-									href='#'
-									className='flex items-center justify-center rounded-md border border-transparent bg-darkBlue px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-ownBlue'
+								<button
+									onClick={handleCheckout}
+									className='w-full flex items-center justify-center rounded-md border border-transparent bg-darkBlue px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-ownBlue'
 								>
 									Checkout
-								</a>
+								</button>
 							</div>
 						</div>
 					</div>
@@ -145,4 +171,3 @@ const Cart = ({ isCartOpen, toggleCart, cartItemsCount }: CartProps) => {
 };
 
 export default Cart;
-

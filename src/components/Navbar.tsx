@@ -1,11 +1,7 @@
 'use client';
 import { Disclosure } from '@headlessui/react';
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
-import {
-	Bars3Icon,
-	XMarkIcon,
-	HeartIcon,
-} from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon, HeartIcon } from '@heroicons/react/24/outline';
 import logo from '../../public/assets/logo.webp';
 import { useState } from 'react';
 import Cart from './Cart';
@@ -17,7 +13,7 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { navigation } from '../data/data';
 import { CartItem } from '../types/types';
-import { Popover, Transition } from '@headlessui/react';
+import { Popover } from '@headlessui/react';
 
 interface CartState {
 	items: Record<string, CartItem>;
@@ -116,7 +112,7 @@ const Navbar = () => {
 								</Disclosure.Button>
 							</div>
 							<Popover className='hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center'>
-								<Popover.Button
+								{/* <Popover.Button
 									onClick={toggleWishlist}
 									type='button'
 									className='relative flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none '
@@ -125,7 +121,11 @@ const Navbar = () => {
 									<span className='sr-only'>Wishlist</span>
 									<HeartIcon className='h-6 w-6' aria-hidden='true' />
 									{isWishlistOpen && <Wishlist />}
-								</Popover.Button>
+								</Popover.Button> */}
+								<Wishlist
+									isWishlistOpen={isWishlistOpen}
+									toggleWishlist={toggleWishlist}
+								/>
 								<Cart
 									isCartOpen={isCartOpen}
 									toggleCart={toggleCart}
@@ -156,7 +156,7 @@ const Navbar = () => {
 										{item.name}
 									</ScrollLink>
 								) : (
-									<Link href={'/'} passHref legacyBehavior>
+									<Link key={item.name} href={'/'} passHref legacyBehavior>
 										<a
 											className={`${
 												router.asPath === item.href

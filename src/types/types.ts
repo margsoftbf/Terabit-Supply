@@ -1,18 +1,21 @@
 export interface CartItem {
-    id: string;
-    name: string;
-    price: number;
-    quantity: number;
-  }
-  
-  export interface CartState {
-    items: { [id: string]: CartItem };
-  }
+	id: string;
+	name: string;
+	price: number;
+	quantity: number;
+}
 
+export interface CartState {
+	items: { [id: string]: CartItem };
+}
 
 export interface WishlistItem {
 	id: string;
 	name: string;
+}
+
+export interface WishlistState {
+	items: WishlistItem[];
 }
 
 export interface ProductProps {

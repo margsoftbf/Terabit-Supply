@@ -18,6 +18,7 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { navigation } from '../data/data';
 import { CartItem } from '../types/types';
+import { Popover, Transition } from '@headlessui/react';
 
 interface CartState {
 	items: Record<string, CartItem>;
@@ -115,8 +116,8 @@ const Navbar = () => {
 									)}
 								</Disclosure.Button>
 							</div>
-							<div className='hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center'>
-								<button
+							<Popover className='hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center'>
+								<Popover.Button
 									onClick={toggleWishlist}
 									type='button'
 									className='relative flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none '
@@ -124,23 +125,14 @@ const Navbar = () => {
 									<span className='absolute -inset-1.5' />
 									<span className='sr-only'>Wishlist</span>
 									<HeartIcon className='h-6 w-6' aria-hidden='true' />
-								</button>
-								<div className='ml-4 flow-root lg:ml-8'>
-									<a href='#' className='group -m-2 flex items-center p-2'>
-										<ShoppingBagIcon
-											onClick={toggleCart}
-											className='h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500'
-											aria-hidden='true'
-										/>
-										<span className='ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800'>
-											{cartItemsCount}
-										</span>
-										<span className='sr-only'>items in cart, view bag</span>
-									</a>
-									{isCartOpen && <Cart />}
 									{isWishlistOpen && <Wishlist />}
-								</div>
-							</div>
+								</Popover.Button>
+								<Cart
+									isCartOpen={isCartOpen}
+									toggleCart={toggleCart}
+									cartItemsCount={cartItemsCount}
+								/>
+							</Popover>
 						</div>
 						<nav
 							className='hidden lg:flex lg:justify-center lg:space-x-8 lg:py-2'
@@ -165,7 +157,7 @@ const Navbar = () => {
 										{item.name}
 									</ScrollLink>
 								) : (
-									<Link href={item.href} passHref legacyBehavior>
+									<Link href={'/'} passHref legacyBehavior>
 										<a
 											className={`${
 												router.asPath === item.href

@@ -16,23 +16,25 @@ import gpuBig from '../../public/assets/hero/gpu-big.webp';
 
 export const heroData = [
 	{
-		id: 1,
-		src: 'https://cdn.pixabay.com/photo/2023/02/14/23/11/cpu-7790579_1280.jpg',
-		alt: 'cpu picture',
-		title: 'Choose your processor',
-		subtitle: 'Intel - Core i9-13900K',
-		price: '$543.33 or 55.55/mo. for 24 mo.',
-		btn: 'Shop now',
-	},
-	{
-		id: 2,
-		src: 'https://cdn.pixabay.com/photo/2020/06/06/01/21/nvidia-5264921_1280.jpg',
-		alt: 'gpu picture',
-		title: 'Choose your GPU',
-		subtitle: 'NVIDIA - GeForce RTX 3090 Ti',
-		price: '$1243.33 or 95.55/mo. for 24 mo.',
-		btn: 'Shop now',
-	},
+        id: 1,
+        src: procesorSmall.src, 
+        srcMd: procesorBig.src, 
+        alt: 'cpu picture',
+        title: 'Choose your processor',
+        subtitle: 'Intel - Core i9-13900K',
+        price: '$543.33 or 55.55/mo. for 24 mo.',
+        btn: 'Shop now',
+    },
+    {
+        id: 2,
+        src: gpuSmall.src, 
+        srcMd: gpuBig.src, 
+        alt: 'gpu picture',
+        title: 'Choose your GPU',
+        subtitle: 'NVIDIA - GeForce RTX 3090 Ti',
+        price: '$1243.33 or 95.55/mo. for 24 mo.',
+        btn: 'Shop now',
+    },
 ];
 
 export const categoriesData = [

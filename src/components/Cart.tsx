@@ -63,7 +63,7 @@ const Cart = ({ isCartOpen, toggleCart, cartItemsCount }: CartProps) => {
 					<div
 						className={`${
 							isCartOpen ? 'block' : 'hidden'
-						} absolute inset-x-0 top-16 mt-px bg-white pb-6 shadow-lg sm:px-2 lg:left-auto lg:right-0 lg:top-full lg:-mr-1.5 lg:mt-3 lg:w-80 lg:rounded-lg lg:ring-1 lg:ring-black lg:ring-opacity-5`}
+						} absolute inset-x-0 top-16 mt-px bg-white pb-6 shadow-lg sm:px-2 lg:left-auto lg:right-0 lg:top-full lg:-mr-1.5 lg:mt-3 lg:w-80 lg:rounded-lg lg:ring-1 lg:ring-black lg:ring-opacity-5 border-2 m-4 rounded-md lg:border-none`}
 					>
 						<XMarkIcon
 							className='h-5 w-5 right-2 top-2 absolute cursor-pointer'
@@ -145,6 +145,4 @@ const Cart = ({ isCartOpen, toggleCart, cartItemsCount }: CartProps) => {
 };
 
 export default Cart;
-function dispatch(arg0: any) {
-	throw new Error('Function not implemented.');
-}
+

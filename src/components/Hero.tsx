@@ -5,7 +5,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { heroData } from '../data/data';
-import Image from 'next/image';
+
 const Hero = () => {
 	return (
 		<div className='m-2 2xl:m-0' id='/'>
@@ -25,13 +25,18 @@ const Hero = () => {
 			>
 				{heroData.map((hero) => (
 					<SwiperSlide key={hero.id}>
-				
-						<img
-							src={hero.src}
-							alt={hero.alt}
-							className='absolute inset-0 z-10 h-full w-full object-cover'
-							loading='lazy'
-						/>
+						<picture>
+							{hero.srcMd && (
+								<source media='(min-width: 768px)' srcSet={hero.srcMd} />
+							)}
+							<img
+								src={hero.src}
+								alt={hero.alt}
+								loading='lazy'
+								className='absolute inset-0 z-10 h-full w-full object-cover'
+							/>
+						</picture>
+					
 
 						<div className='absolute w-full h-full bg-black/50 left-0 z-10'></div>
 						<div className='absolute inset-0 z-20 flex flex-col justify-center items-start text-white ml-4 md:items-center lg:ml-0'>

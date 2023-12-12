@@ -5,7 +5,6 @@ import {
 	Bars3Icon,
 	XMarkIcon,
 	HeartIcon,
-	ShoppingBagIcon,
 } from '@heroicons/react/24/outline';
 import logo from '../../public/assets/logo.webp';
 import { useState } from 'react';
@@ -200,8 +199,8 @@ const Navbar = () => {
 							))}
 						</div>
 						<div className='border-t border-gray-200 pb-3 pt-4'>
-							<div className='flex items-center px-4'>
-								<button
+							<Popover className='flex items-center px-4'>
+								<Popover.Button
 									onClick={toggleWishlist}
 									type='button'
 									className='relative ml-auto flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500'
@@ -209,23 +208,13 @@ const Navbar = () => {
 									<span className='absolute -inset-1.5' />
 									<span className='sr-only'>Wishlist</span>
 									<HeartIcon className='h-6 w-6' aria-hidden='true' />
-								</button>
-								<div className='ml-4 flow-root lg:ml-8'>
-									<a href='#' className='group -m-2 flex items-center p-2'>
-										<ShoppingBagIcon
-											onClick={toggleCart}
-											className='h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500'
-											aria-hidden='true'
-										/>
-										<span className='ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800'>
-											{cartItemsCount}
-										</span>
-										<span className='sr-only'>items in cart, view bag</span>
-									</a>
-									{isCartOpen && <Cart />}
-									{isWishlistOpen && <Wishlist />}
-								</div>
-							</div>
+								</Popover.Button>
+								<Cart
+									isCartOpen={isCartOpen}
+									toggleCart={toggleCart}
+									cartItemsCount={cartItemsCount}
+								/>
+							</Popover>
 						</div>
 					</Disclosure.Panel>
 				</>

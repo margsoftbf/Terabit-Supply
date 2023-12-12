@@ -17,8 +17,7 @@ import gpuBig from '../../public/assets/hero/gpu-big.webp';
 export const heroData = [
 	{
 		id: 1,
-		src: procesorSmall,
-		srcMd: procesorBig,
+		src: 'https://cdn.pixabay.com/photo/2023/02/14/23/11/cpu-7790579_1280.jpg',
 		alt: 'cpu picture',
 		title: 'Choose your processor',
 		subtitle: 'Intel - Core i9-13900K',
@@ -27,8 +26,7 @@ export const heroData = [
 	},
 	{
 		id: 2,
-		src: gpuSmall,
-		scrMd: gpuBig,
+		src: 'https://cdn.pixabay.com/photo/2020/06/06/01/21/nvidia-5264921_1280.jpg',
 		alt: 'gpu picture',
 		title: 'Choose your GPU',
 		subtitle: 'NVIDIA - GeForce RTX 3090 Ti',

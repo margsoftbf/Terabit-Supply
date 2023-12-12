@@ -16,9 +16,8 @@ import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import {navigation} from '../data/data';
+import { navigation } from '../data/data';
 import { CartItem } from '../types/types';
-
 
 interface CartState {
 	items: Record<string, CartItem>;
@@ -30,15 +29,15 @@ const Navbar = () => {
 	const router = useRouter();
 	const [activeLink, setActiveLink] = useState('/');
 	const isHomePage = router.pathname === '/';
-	
+
 	const selectCartItemsCount = (state: { cart: CartState }) => {
 		return Object.values(state.cart.items).reduce(
 			(total: number, item: CartItem) => total + item.quantity,
 			0
-			);
-		};
-	
-		const cartItemsCount = useSelector(selectCartItemsCount);
+		);
+	};
+
+	const cartItemsCount = useSelector(selectCartItemsCount);
 	const toggleCart = () => {
 		setWishlistOpen(false);
 		setCartOpen(!isCartOpen);
@@ -48,7 +47,6 @@ const Navbar = () => {
 		setCartOpen(false);
 		setWishlistOpen(!isWishlistOpen);
 	};
-	
 
 	const handleScroll = (itemHref: string) => {
 		const offset = 500;
@@ -167,16 +165,19 @@ const Navbar = () => {
 										{item.name}
 									</ScrollLink>
 								) : (
-									<Link
-										href={'/'}
-										key={item.name}
-										className={`${
-											router.asPath === item.href
-												? 'bg-gray-200 text-gray-900'
-												: 'text-gray-900 hover:bg-gray-100 hover:text-gray-900'
-										} inline-flex items-center rounded-md py-2 px-3 text-sm font-medium cursor-pointer`}
-									>
-										{item.name}
+									<Link href={item.href} passHref legacyBehavior>
+										<a
+											className={`${
+												router.asPath === item.href
+													? 'bg-gray-200 text-gray-900'
+													: 'text-gray-900 hover:bg-gray-100 hover:text-gray-900'
+											} inline-flex items-center rounded-md py-2 px-3 text-sm font-medium cursor-pointer`}
+											aria-current={
+												router.asPath === item.href ? 'page' : undefined
+											}
+										>
+											{item.name}
+										</a>
 									</Link>
 								)
 							)}

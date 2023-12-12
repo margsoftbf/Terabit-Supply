@@ -32,6 +32,7 @@ const Hero = () => {
 							<img
 								src={hero.src.src}
 								alt={hero.alt}
+								loading='lazy'
 								className='absolute inset-0 z-10 h-full w-full object-cover'
 							/>
 						</picture>

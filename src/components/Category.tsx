@@ -12,7 +12,7 @@ const Category = () => {
 					<Link
 						className='w-64 flex flex-col rounded-lg bg-white text-center border shadow hover:bg-ownGray focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition duration-300 ease-in-out'
 						key={category.id}
-						href={`/categories/${category.id}`}
+						href={`/category/${category.id}`}
 					>
 						<div className='flex flex-1 flex-col p-8'>
 							<img

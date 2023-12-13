@@ -3,7 +3,7 @@ import { Disclosure } from '@headlessui/react';
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
 import { Bars3Icon, XMarkIcon, HeartIcon } from '@heroicons/react/24/outline';
 import logo from '../../public/assets/logo.webp';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Cart from './Cart';
 import Wishlist from './Wishlist';
 import { useSelector } from 'react-redux';
@@ -11,7 +11,7 @@ import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { navigation } from '../data/data';
+import { navigation, productsData } from '../data/data';
 import { CartItem } from '../types/types';
 import { Popover } from '@headlessui/react';
 
@@ -22,6 +22,8 @@ interface CartState {
 const Navbar = () => {
 	const [isCartOpen, setCartOpen] = useState(false);
 	const [isWishlistOpen, setWishlistOpen] = useState(false);
+	const [searchTerm, setSearchTerm] = useState('');
+	const searchInputRef = useRef<HTMLInputElement>(null);
 	const router = useRouter();
 	const [activeLink, setActiveLink] = useState('/');
 	const isHomePage = router.pathname === '/';
@@ -54,6 +56,21 @@ const Navbar = () => {
 				top: offsetPosition,
 				behavior: 'smooth',
 			});
+		}
+	};
+
+	const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setSearchTerm(e.target.value);
+	};
+
+	const filteredProducts = productsData.filter((product) =>
+		product.name.toLowerCase().includes(searchTerm.toLowerCase())
+	);
+
+	const handleLinkClick = () => {
+		setSearchTerm('');
+		if (searchInputRef.current) {
+			searchInputRef.current.blur();
 		}
 	};
 
@@ -96,8 +113,24 @@ const Navbar = () => {
 											className='block w-full rounded-md border-0 bg-white py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-darkBlue sm:text-sm sm:leading-6'
 											placeholder='Search'
 											type='search'
+											value={searchTerm}
+											onChange={handleSearchChange}
 										/>
 									</div>
+									{searchTerm && (
+										<div className='absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-md shadow-lg w-full z-10'>
+											{filteredProducts.map((product) => (
+												<Link
+													href={`/product/${product.id}`}
+													key={product.id}
+													className='block px-4 py-2 hover:bg-gray-100'
+													onClick={handleLinkClick}
+												>
+													{product.name} - {product.price}
+												</Link>
+											))}
+										</div>
+									)}
 								</div>
 							</div>
 							<div className='relative z-10 flex items-center lg:hidden'>
@@ -112,16 +145,6 @@ const Navbar = () => {
 								</Disclosure.Button>
 							</div>
 							<Popover className='hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center'>
-								{/* <Popover.Button
-									onClick={toggleWishlist}
-									type='button'
-									className='relative flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none '
-								>
-									<span className='absolute -inset-1.5' />
-									<span className='sr-only'>Wishlist</span>
-									<HeartIcon className='h-6 w-6' aria-hidden='true' />
-									{isWishlistOpen && <Wishlist />}
-								</Popover.Button> */}
 								<Wishlist
 									isWishlistOpen={isWishlistOpen}
 									toggleWishlist={toggleWishlist}

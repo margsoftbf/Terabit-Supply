@@ -55,7 +55,6 @@ const Id = () => {
 											className='block h-auto w-5 flex-shrink-0'
 										/>
 										<span className='ml-3 block text-sm font-medium'>USD</span>
-										<span className='sr-only'>, change currency</span>
 									</a>
 								</div>
 							</div>

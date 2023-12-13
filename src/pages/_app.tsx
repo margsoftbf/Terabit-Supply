@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from '../store/store';
 import '../styles/globals.css';
 import Navbar from '../components/Navbar';
+import Footer from '@/components/Footer';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
 	return (
@@ -12,10 +13,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 				<title>Terabit Supply PC Shop</title>
 				<meta name='description' content='Terabit Supply PC Shop' />
 				<link rel='icon' href='/favicon.ico' />
-				<meta httpEquiv="Content-Language" content="en" />
+				<meta httpEquiv='Content-Language' content='en' />
 			</Head>
 			<Navbar />
 			<Component {...pageProps} />
+			<Footer />
 		</Provider>
 	);
 };

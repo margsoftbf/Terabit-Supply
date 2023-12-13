@@ -952,3 +952,48 @@ export const reviewsProduct = {
 		},
 	],
 };
+
+import {
+	FaFacebook,
+	FaInstagram,
+	FaTwitter,
+	FaGithub,
+	FaYoutube,
+} from 'react-icons/fa';
+export const footerNavigation = {
+	main: [
+		{ name: 'Category', href: '#' },
+		{ name: 'About', href: '#' },
+		{ name: 'Popular', href: '#' },
+		{ name: 'Deals', href: '#' },
+		{ name: 'Newsletter', href: '#' },
+		{ name: 'Contact', href: '#' },
+	],
+	social: [
+		{
+			name: 'Facebook',
+			href: '#',
+			icon: FaFacebook,
+		},
+		{
+			name: 'Instagram',
+			href: '#',
+			icon: FaInstagram,
+		},
+		{
+			name: 'Twitter',
+			href: '#',
+			icon: FaTwitter,
+		},
+		{
+			name: 'GitHub',
+			href: '#',
+			icon: FaGithub,
+		},
+		{
+			name: 'YouTube',
+			href: '#',
+			icon: FaYoutube,
+		},
+	],
+};

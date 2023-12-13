@@ -3,21 +3,21 @@ import { categoriesData } from '../data/data';
 
 const Category = () => {
 	return (
-		<div className='text-center mt-8 max-w-6xl m-auto' id='categories'>
+		<div className='text-center mt-8 max-w-8xl m-auto' id='categories'>
 			<h2 className='text-xl font-medium tracking-tight text-gray-900 sm:text-3xl my-4 font-montserrat'>
 				Shop by Category
 			</h2>
-			<div className='grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-16 lg:grid-cols-4 m-2 justify-items-center'>
+			<div className='mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8 gap-x-4 gap-y-8 sm:gap-x-4 m-2 justify-items-center'>
 				{categoriesData.map((category) => (
 					<Link
-						className='w-64 flex flex-col rounded-lg bg-white text-center border shadow hover:bg-ownGray focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition duration-300 ease-in-out'
+						className='w-40 h-44 flex flex-col rounded-lg bg-white text-center border shadow hover:bg-ownGray focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition duration-300 ease-in-out '
 						key={category.id}
 						href={`/category/${category.id}`}
 					>
 						<div className='flex flex-1 flex-col p-8'>
 							<img
 								src={category.imageUrl}
-								className='mx-auto h-32 w-32 flex-shrink-0'
+								className='mx-auto h-16 w-16 flex-shrink-0'
 								alt=''
 							/>
 							<h3 className='mt-6 text-md font-medium text-gray-900'>

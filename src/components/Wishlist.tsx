@@ -29,7 +29,7 @@ const Wishlist = ({ isWishlistOpen, toggleWishlist }: WishListProps) => {
 					className='flex items-center p-2 text-gray-400 hover:text-gray-500'
 				>
 					<HeartIcon className='h-6 w-6' aria-hidden='true' />
-					<span className='sr-only'>Wishlist</span>
+					<span className='ml-2 text-black font-semibold'>Wishlist</span>
 				</Popover.Button>
 
 				{isWishlistOpen && (

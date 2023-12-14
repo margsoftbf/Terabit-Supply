@@ -21,7 +21,7 @@ const Hero = () => {
 					clickable: true,
 				}}
 				modules={[Autoplay, Pagination]}
-				className='mx-auto max-w-8xl h-[500px] px-2 sm:px-4 lg:px-8 relative mt-2 rounded-md'
+				className='mx-auto max-w-8xl h-[300px] xl:h-[400px] px-2 sm:px-4 lg:px-8 relative mt-2 rounded-md'
 			>
 				{heroData.map((hero) => (
 					<SwiperSlide key={hero.id}>

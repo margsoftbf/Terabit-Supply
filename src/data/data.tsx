@@ -96,6 +96,7 @@ export const productsData = [
 		reviewCount: 118,
 		inStock: true,
 		price: 358.99,
+		isTrending: true,
 	},
 	{
 		id: '2',
@@ -144,6 +145,7 @@ export const productsData = [
 		reviewCount: 78,
 		inStock: true,
 		price: 218.59,
+		isTrending: true,
 	},
 	{
 		id: '5',
@@ -192,6 +194,7 @@ export const productsData = [
 		reviewCount: 488,
 		inStock: true,
 		price: 146.36,
+		isTrending: true,
 	},
 	{
 		id: '8',
@@ -256,6 +259,7 @@ export const productsData = [
 		reviewCount: 174,
 		inStock: true,
 		price: 275.99,
+		isTrending: true,
 	},
 	{
 		id: '12',
@@ -305,6 +309,7 @@ export const productsData = [
 		reviewCount: 124,
 		inStock: true,
 		price: 84.0,
+		isTrending: true,
 	},
 	{
 		id: '15',
@@ -368,6 +373,7 @@ export const productsData = [
 		reviewCount: 14,
 		inStock: true,
 		price: 85.99,
+		isTrending: true,
 	},
 	{
 		id: '19',
@@ -432,6 +438,7 @@ export const productsData = [
 		reviewCount: 14,
 		inStock: true,
 		price: 62.99,
+		isTrending: true,
 	},
 	{
 		id: '23',
@@ -479,6 +486,7 @@ export const productsData = [
 		reviewCount: 140,
 		inStock: true,
 		price: 109.99,
+		isTrending: true,
 	},
 	{
 		id: '26',
@@ -526,6 +534,7 @@ export const productsData = [
 		reviewCount: 147,
 		inStock: true,
 		price: 344.99,
+		isTrending: true,
 	},
 	{
 		id: '29',
@@ -624,6 +633,7 @@ export const productsData = [
 		reviewCount: 79,
 		inStock: true,
 		price: 64.99,
+		isTrending: true,
 	},
 	{
 		id: '35',

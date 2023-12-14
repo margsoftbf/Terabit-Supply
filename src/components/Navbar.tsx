@@ -222,16 +222,11 @@ const Navbar = () => {
 							))}
 						</div>
 						<div className='border-t border-gray-200 pb-3 pt-4'>
-							<Popover className='flex items-center px-4'>
-								<Popover.Button
-									onClick={toggleWishlist}
-									type='button'
-									className='relative ml-auto flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500'
-								>
-									<span className='absolute -inset-1.5' />
-									<span className='sr-only'>Wishlist</span>
-									<HeartIcon className='h-6 w-6' aria-hidden='true' />
-								</Popover.Button>
+							<Popover className='flex justify-end items-center px-4'>
+								<Wishlist
+									isWishlistOpen={isWishlistOpen}
+									toggleWishlist={toggleWishlist}
+								/>
 								<Cart
 									isCartOpen={isCartOpen}
 									toggleCart={toggleCart}

@@ -946,8 +946,7 @@ export const reviewsProduct = {
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo saepe omnis rem incidunt at fugiat quae maxime soluta culpa. Sed ex, repellendus porro soluta enim ipsa laboriosam iste beatae vel!</p>
       `,
 			author: 'Daniel Rodriguez',
-			avatarSrc:
-				'https://admin-garski-dashboard.netlify.app/assets/img/people/avatar-rizky-hasanuddin.webp',
+			avatarSrc: '/assets/people/avatar-rizky-hasanuddin.webp',
 		},
 		{
 			id: 1,
@@ -956,8 +955,7 @@ export const reviewsProduct = {
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, quam, natus quos dolorum voluptatibus assumenda doloremque nostrum corrupti in, aliquam sint laudantium asperiores hic. Odio, beatae sit. Culpa, numquam facilis!</p>
       `,
 			author: 'Kevin Roberts',
-			avatarSrc:
-				'https://admin-garski-dashboard.netlify.app/assets/img/people/avatar-kimberly-smith.webp',
+			avatarSrc: '/assets/people/avatar-kimberly-smith.webp',
 		},
 	],
 };
@@ -1041,8 +1039,7 @@ export const testimonialsSection = [
 		author: {
 			name: 'Eula Hubard',
 			handle: 'eulahubbard',
-			imageUrl:
-				'https://admin-garski-dashboard.netlify.app/assets/img/people/avatar-nathan-peterson.webp',
+			imageUrl: '/assets/people/avatar-nathan-peterson.webp',
 		},
 	},
 	{
@@ -1050,8 +1047,7 @@ export const testimonialsSection = [
 		author: {
 			name: 'James Smith',
 			handle: 'jamessmith',
-			imageUrl:
-				'https://admin-garski-dashboard.netlify.app/assets/img/people/avatar-mark-webber.webp',
+			imageUrl: '/assets/people/avatar-mark-webber.webp',
 		},
 	},
 	{
@@ -1060,7 +1056,7 @@ export const testimonialsSection = [
 			name: 'Christopher Anderson',
 			handle: 'christopheranderson',
 			imageUrl:
-				'https://admin-garski-dashboard.netlify.app/assets/img/people/avatar-angela-gray.webp',
+				'/assets/people/avatar-angela-gray.webp',
 		},
 	},
 	{
@@ -1069,7 +1065,7 @@ export const testimonialsSection = [
 			name: 'Mary Wright',
 			handle: 'marywright',
 			imageUrl:
-				'https://admin-garski-dashboard.netlify.app/assets/img/people/avatar-kimberly-smith.webp',
+				'/assets/people/avatar-kimberly-smith.webp',
 		},
 	},
 	{
@@ -1077,8 +1073,7 @@ export const testimonialsSection = [
 		author: {
 			name: 'Patricia Perez',
 			handle: 'patriciaperez',
-			imageUrl:
-				'https://admin-garski-dashboard.netlify.app/assets/img/people/avatar-mark-webber.webp',
+			imageUrl: '/assets/people/avatar-mark-webber.webp',
 		},
 	},
 	{
@@ -1087,7 +1082,7 @@ export const testimonialsSection = [
 			name: 'Laura Jacskon',
 			handle: 'laurajackson',
 			imageUrl:
-				'https://admin-garski-dashboard.netlify.app/assets/img/people/avatar-kimberly-smith.webp',
+				'/assets/people/avatar-kimberly-smith.webp',
 		},
 	},
 ];
@@ -1136,8 +1131,7 @@ export const blogPosts: BlogPostProps[] = [
 			name: 'Eula Hubbard',
 			role: 'Co-Founder / CTO',
 			href: '#',
-			imageUrl:
-				'https://admin-garski-dashboard.netlify.app/assets/img/people/avatar-nathan-peterson.webp',
+			imageUrl: '/assets/people/avatar-nathan-peterson.webp',
 		},
 	},
 	{
@@ -1156,7 +1150,7 @@ export const blogPosts: BlogPostProps[] = [
 			role: 'Co-Founder / CTO',
 			href: '#',
 			imageUrl:
-				'https://admin-garski-dashboard.netlify.app/assets/img/people/avatar-angela-gray.webp',
+				'/assets/people/avatar-angela-gray.webp',
 		},
 	},
 	{
@@ -1174,8 +1168,7 @@ export const blogPosts: BlogPostProps[] = [
 			name: 'Laura Jackson',
 			role: 'Co-Founder / CTO',
 			href: '#',
-			imageUrl:
-				'https://admin-garski-dashboard.netlify.app/assets/img/people/avatar-mark-webber.webp',
+			imageUrl: '/assets/people/avatar-mark-webber.webp',
 		},
 	},
 ];

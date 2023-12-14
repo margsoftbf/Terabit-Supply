@@ -1037,7 +1037,6 @@ export const brands = [
 
 export const testimonialsSection = [
 	{
-		
 		body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, eligendi! Sint delectus explicabo, quas itaque ratione dolores iusto facilis veritatis?',
 		author: {
 			name: 'Eula Hubard',
@@ -1091,7 +1090,6 @@ export const testimonialsSection = [
 				'https://admin-garski-dashboard.netlify.app/assets/img/people/avatar-kimberly-smith.webp',
 		},
 	},
-
 ];
 
 import {
@@ -1118,5 +1116,66 @@ export const aboutUsCards = [
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate aliquid ad quae sint dicta eius cumque',
 		icon: NewspaperIcon,
+	},
+];
+
+import { BlogPostProps } from '@/types/types';
+export const blogPosts: BlogPostProps[] = [
+	{
+		id: 1,
+		title: 'Better customer service',
+		href: '#',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam odit esse illo tempora minima corporis exercitationem voluptatibus nulla repellat, quod saepe illum quas. Voluptate necessitatibus accusamus, quos quam recusandae possimus libero voluptates? Veniam officiis doloribus voluptates sit officia facere ad autem non aliquam hic explicabo tenetur deserunt dolore velit neque reiciendis atque incidunt necessitatibus, facilis pariatur quisquam. Vero ex modi natus numquam officia impedit voluptatem soluta ipsa, ea perspiciatis enim. Accusamus voluptates officia tempora quas vel possimus sint voluptas dignissimos!',
+		imageUrl:
+			'https://images.unsplash.com/photo-1516542076529-1ea3854896f2?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+		date: 'Dec 10, 2023',
+		datetime: '2023-12-13',
+		category: { title: 'PC Parts', href: '#' },
+		author: {
+			name: 'Eula Hubbard',
+			role: 'Co-Founder / CTO',
+			href: '#',
+			imageUrl:
+				'https://admin-garski-dashboard.netlify.app/assets/img/people/avatar-nathan-peterson.webp',
+		},
+	},
+	{
+		id: 2,
+		title: 'Better customer service',
+		href: '#',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam odit esse illo tempora minima corporis exercitationem voluptatibus nulla repellat, quod saepe illum quas. Voluptate necessitatibus accusamus, quos quam recusandae possimus libero voluptates? Veniam officiis doloribus voluptates sit officia facere ad autem non aliquam hic explicabo tenetur deserunt dolore velit neque reiciendis atque incidunt necessitatibus, facilis pariatur quisquam. Vero ex modi natus numquam officia impedit voluptatem soluta ipsa, ea perspiciatis enim. Accusamus voluptates officia tempora quas vel possimus sint voluptas dignissimos!',
+		imageUrl:
+			'https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+		date: 'Dec 10, 2023',
+		datetime: '2023-12-13',
+		category: { title: 'PC Parts', href: '#' },
+		author: {
+			name: 'Mary Wright',
+			role: 'Co-Founder / CTO',
+			href: '#',
+			imageUrl:
+				'https://admin-garski-dashboard.netlify.app/assets/img/people/avatar-angela-gray.webp',
+		},
+	},
+	{
+		id: 3,
+		title: 'Better customer service',
+		href: '#',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam odit esse illo tempora minima corporis exercitationem voluptatibus nulla repellat, quod saepe illum quas. Voluptate necessitatibus accusamus, quos quam recusandae possimus libero voluptates? Veniam officiis doloribus voluptates sit officia facere ad autem non aliquam hic explicabo tenetur deserunt dolore velit neque reiciendis atque incidunt necessitatibus, facilis pariatur quisquam. Vero ex modi natus numquam officia impedit voluptatem soluta ipsa, ea perspiciatis enim. Accusamus voluptates officia tempora quas vel possimus sint voluptas dignissimos!',
+		imageUrl:
+			'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+		date: 'Dec 10, 2023',
+		datetime: '2023-12-13',
+		category: { title: 'PC Parts', href: '#' },
+		author: {
+			name: 'Laura Jackson',
+			role: 'Co-Founder / CTO',
+			href: '#',
+			imageUrl:
+				'https://admin-garski-dashboard.netlify.app/assets/img/people/avatar-mark-webber.webp',
+		},
 	},
 ];

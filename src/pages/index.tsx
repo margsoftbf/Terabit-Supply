@@ -5,6 +5,7 @@ import Brands from '@/components/Brands';
 import Newsletter from '@/components/Newsletter';
 import Testimonials from '@/components/Testimonials';
 import Aboutus from '@/components/Aboutus';
+import Blog from '@/components/Blog';
 
 export default function Home() {
 	return (
@@ -16,6 +17,7 @@ export default function Home() {
 			<Newsletter />
 			<Testimonials />
 			<Aboutus />
+			<Blog />
 		</main>
 	);
 }

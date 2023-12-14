@@ -17,6 +17,28 @@ https://terabit-supply.netlify.app/
   npm i
   npm run dev
 ```
+## Project Features:
+
+### 1. Shopping Cart:
+- We have implemented a feature-rich shopping cart that allows users to easily add products, change their quantities, and remove items from the cart.
+- It automatically calculates the purchase costs and provides an order summary.
+
+### 2. Search Functionality:
+- Our project includes a robust search functionality that enables users to quickly find products by name or category.
+- Search results are dynamically generated and presented to users in real-time.
+
+### 3. Wishlist:
+- Users can create and manage their wishlist, adding products and tracking their availability.
+- Notifications are provided for changes in product availability in the wishlist.
+
+### 4. Dynamically Generated Links:
+- We have implemented dynamic link generation for categories, products, and other sections of the website, making it easy for users to navigate through the content.
+- This feature allows users to share links to specific products and categories.
+
+### 5. Type Safety:
+- The project utilizes type safety mechanisms to improve code quality and prevent errors during development.
+- Type checking makes the code more readable and easier to maintain.
+
 
 ## Features
 

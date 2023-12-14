@@ -4,6 +4,7 @@ import { BlogPostProps } from '@/types/types';
 
 import React, { useState } from 'react';
 import Modal from 'react-modal';
+import Image from 'next/image';
 
 const Blog = () => {
 	const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -36,10 +37,14 @@ const Blog = () => {
 							className='flex flex-col items-start justify-between'
 						>
 							<div className='relative w-full'>
-								<img
+								<Image
 									src={post.imageUrl}
-									alt=''
-									className='aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]'
+									alt='Opis obrazu'
+									width={1920}
+									height={1080}
+									layout='responsive'
+									sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw'
+									className='rounded-2xl bg-gray-100'
 								/>
 								<div className='absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10' />
 							</div>
@@ -67,10 +72,12 @@ const Blog = () => {
 									</p>
 								</div>
 								<div className='relative mt-8 flex items-center gap-x-4'>
-									<img
+									<Image
 										src={post.author.imageUrl}
-										alt=''
-										className='h-10 w-10 rounded-full bg-gray-100'
+										alt='Opis obrazu'
+										width={40} 
+										height={40}
+										layout='fixed'
 									/>
 									<div className='text-sm leading-6'>
 										<p className='font-semibold text-gray-900'>

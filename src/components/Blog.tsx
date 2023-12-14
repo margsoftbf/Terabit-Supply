@@ -5,7 +5,6 @@ import { BlogPostProps } from '@/types/types';
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 
-
 const Blog = () => {
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 	const [selectedPost, setSelectedPost] = useState<BlogPostProps | null>(null);
@@ -92,22 +91,22 @@ const Blog = () => {
 						isOpen={modalIsOpen}
 						onRequestClose={closeModal}
 						contentLabel='Example Modal'
-						className='fixed inset-0 flex justify-center items-center z-50'
-						overlayClassName='fixed inset-0 bg-black/95 flex justify-center items-center z-40'
+						className='inset-0 flex relative max-h-[80%] justify-center items-center z-50 overflow-y-auto mx-4 my-12 top-12'
+						overlayClassName='fixed top-0 left-0 right-0 bottom-0 bg-black/95 flex justify-center items-center z-40'
 					>
-						<div className='bg-white rounded-md p-4 mx-auto max-w-8xl px-6 lg:px-8 text-white relative'>
+						<div className='bg-white rounded-md p-4 mx-auto max-w-8xl px-6 lg:px-8 text-white relative overflow-y-auto max-h-[80vh]'>
 							<button
-								className='text-black absolute right-2 top-2'
+								className='text-black absolute right-2 top-2 z-50'
 								onClick={closeModal}
 							>
 								<XMarkIcon className='h-6 w-6' />
 							</button>
 							<div className='flex flex-col items-start justify-between'>
-								<div className='relative mt-12'>
+								<div className='relative mt-6'>
 									<img
 										src={selectedPost.imageUrl}
 										alt=''
-										className='h-96 w-full rounded-2xl bg-gray-100 object-cover'
+										className='max-h-96 w-full object-cover rounded-2xl'
 									/>
 									<div className='absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10' />
 								</div>

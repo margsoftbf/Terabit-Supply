@@ -7,7 +7,7 @@ const Popular = () => {
 	const trendingProducts = productsData.filter((product) => product.isTrending);
 
 	return (
-		<div className='bg-gray-100 my-8'>
+		<div id='popular' className='bg-gray-100 my-8'>
 			<div className='mx-auto flex flex-col px-4 py-12 sm:px-6 lg:max-w-8xl'>
 				<div className='flex items-center justify-between relative'>
 					<h2 className='text-2xl font-bold tracking-tight text-gray-900'>

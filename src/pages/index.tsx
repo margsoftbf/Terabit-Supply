@@ -4,6 +4,7 @@ import Popular from '@/components/Popular';
 import Brands from '@/components/Brands';
 import Newsletter from '@/components/Newsletter';
 import Testimonials from '@/components/Testimonials';
+import Aboutus from '@/components/Aboutus';
 
 export default function Home() {
 	return (
@@ -14,6 +15,7 @@ export default function Home() {
 			<Brands />
 			<Newsletter />
 			<Testimonials />
+			<Aboutus />
 		</main>
 	);
 }

@@ -1,12 +1,11 @@
 export const navigation = [
 	{ name: 'Home', href: '/', hash: '/', current: true },
 	{ name: 'Category', href: 'categories', hash: 'categories', current: false },
-	{ name: 'About us', href: '#', current: false },
-	{ name: 'Popular', href: '#', current: false },
-	{ name: 'Deals', href: '#', current: false },
-	{ name: 'Newsletter', href: '#', current: false },
-	{ name: 'Testimonials', href: '#', current: false },
-	{ name: 'Contact', href: '#', current: false },
+	{ name: 'About us', href: 'aboutus', current: false },
+	{ name: 'Popular', href: 'popular', current: false },
+	{ name: 'Newsletter', href: 'newsletter', current: false },
+	{ name: 'Testimonials', href: 'testimonials', current: false },
+	{ name: 'Contact', href: 'contact', current: false },
 ];
 
 import procesorSmall from '../../public/assets/hero/procesor-small.webp';
@@ -1093,4 +1092,31 @@ export const testimonialsSection = [
 		},
 	},
 
+];
+
+import {
+	LifebuoyIcon,
+	NewspaperIcon,
+	PhoneIcon,
+} from '@heroicons/react/20/solid';
+
+export const aboutUsCards = [
+	{
+		name: 'Sales',
+		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate aliquid ad quae sint dicta eius cumque',
+		icon: PhoneIcon,
+	},
+	{
+		name: 'Technical Support',
+		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate aliquid ad quae sint dicta eius cumque',
+		icon: LifebuoyIcon,
+	},
+	{
+		name: 'Media Inquiries',
+		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate aliquid ad quae sint dicta eius cumque',
+		icon: NewspaperIcon,
+	},
 ];

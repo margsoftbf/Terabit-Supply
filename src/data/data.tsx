@@ -1035,3 +1035,62 @@ export const brands = [
 		imgAlt: 'Corsair logo',
 	},
 ];
+
+export const testimonialsSection = [
+	{
+		
+		body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, eligendi! Sint delectus explicabo, quas itaque ratione dolores iusto facilis veritatis?',
+		author: {
+			name: 'Eula Hubard',
+			handle: 'eulahubbard',
+			imageUrl:
+				'https://admin-garski-dashboard.netlify.app/assets/img/people/avatar-nathan-peterson.webp',
+		},
+	},
+	{
+		body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, eligendi! Sint delectus explicabo, quas itaque ratione dolores iusto facilis veritatis?',
+		author: {
+			name: 'James Smith',
+			handle: 'jamessmith',
+			imageUrl:
+				'https://admin-garski-dashboard.netlify.app/assets/img/people/avatar-mark-webber.webp',
+		},
+	},
+	{
+		body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, eligendi! Sint delectus explicabo, quas itaque ratione dolores iusto facilis veritatis?',
+		author: {
+			name: 'Christopher Anderson',
+			handle: 'christopheranderson',
+			imageUrl:
+				'https://admin-garski-dashboard.netlify.app/assets/img/people/avatar-angela-gray.webp',
+		},
+	},
+	{
+		body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, eligendi! Sint delectus explicabo, quas itaque ratione dolores iusto facilis veritatis?',
+		author: {
+			name: 'Mary Wright',
+			handle: 'marywright',
+			imageUrl:
+				'https://admin-garski-dashboard.netlify.app/assets/img/people/avatar-kimberly-smith.webp',
+		},
+	},
+	{
+		body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, eligendi! Sint delectus explicabo, quas itaque ratione dolores iusto facilis veritatis?',
+		author: {
+			name: 'Patricia Perez',
+			handle: 'patriciaperez',
+			imageUrl:
+				'https://admin-garski-dashboard.netlify.app/assets/img/people/avatar-mark-webber.webp',
+		},
+	},
+	{
+		body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, eligendi! Sint delectus explicabo, quas itaque ratione dolores iusto facilis veritatis?',
+		author: {
+			name: 'Laura Jacskon',
+			handle: 'laurajackson',
+			imageUrl:
+				'https://admin-garski-dashboard.netlify.app/assets/img/people/avatar-kimberly-smith.webp',
+		},
+	},
+
+];

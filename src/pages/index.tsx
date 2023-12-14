@@ -1,6 +1,7 @@
 import Hero from '../components/Hero';
 import Category from '../components/Category';
 import Popular from '@/components/Popular';
+import Brands from '@/components/Brands';
 
 export default function Home() {
 	return (
@@ -8,6 +9,7 @@ export default function Home() {
 			<Hero />
 			<Category />
 			<Popular />
+			<Brands />
 		</main>
 	);
 }

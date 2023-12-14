@@ -66,14 +66,14 @@ const CategoryPage = () => {
 					{categoryName}
 				</h2>
 			</div>
-			<div className='-mx-px gap-2 grid grid-cols-1 sm:grid-cols-2 sm:mx-0 md:grid-cols-3 lg:grid-cols-4'>
+			<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 -mx-px'>
 				{currentProducts.map((product) => (
 					<div
 						key={product.id}
-						className='group relative border border-gray-200 p-4 sm:p-6 rounded-md shadow m-2'
+						className='group relative m-2 rounded-md border border-gray-200 p-4 shadow sm:p-6'
 					>
 						<Link href={`/product/${product.id}`}>
-							<div className='flex items-center  justify-center overflow-hidden rounded-lg group-hover:opacity-75'>
+							<div className='flex items-center relative justify-center overflow-hidden rounded-lg group-hover:opacity-75'>
 								<img
 									src={product.img}
 									alt={product.imgAlt}
@@ -111,10 +111,11 @@ const CategoryPage = () => {
 								</p>
 							</div>
 						</Link>
-						<div className='flex flex-col gap-2'>
+
+						<div className='mt-2 flex flex-col gap-2 relative'>
 							<button
 								onClick={() => handleAddToCart(product)}
-								className='relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 w-full px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200'
+								className='relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 w-full px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200 '
 							>
 								Add to cart<span className='sr-only'>, {product.name}</span>
 							</button>
@@ -122,9 +123,11 @@ const CategoryPage = () => {
 								onClick={() => handleAddToWishlist(product)}
 								className='relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 w-full px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200'
 							>
-								Add to wishlist<span className='sr-only'>, {product.name}</span>
+								Add to wishlist
+								<span className='sr-only'>, {product.name}</span>
 							</button>
 						</div>
+
 						{addedProductId === product.id && (
 							<div className='absolute top-2 left-2 right-2 rounded-md flex items-center justify-center bg-green-500 text-white text-sm py-2'>
 								Added to cart

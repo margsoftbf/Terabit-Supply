@@ -1007,3 +1007,31 @@ export const footerNavigation = {
 		},
 	],
 };
+
+export const brands = [
+	{
+		id: 1,
+		img: 'https://l3c.cloud/wp-content/uploads/2019/02/nvidia-png-nvidia-yeni-c-kacak-olan-oyunlar-icin-yeni-game-ready-suruculerini-yay-nlad-1000.png',
+		imgAlt: 'Nvidia logo',
+	},
+	{
+		id: 2,
+		img: 'https://upload.wikimedia.org/wikipedia/commons/6/64/Intel-logo-2022.png',
+		imgAlt: 'Intel logo',
+	},
+	{
+		id: 3,
+		img: 'https://www.etp4hpc.eu/img/image/fotos/amd_logo.jpg?&q=100',
+		imgAlt: 'AMD logo',
+	},
+	{
+		id: 4,
+		img: 'https://microman.co.zw/wp-content/uploads/2022/05/logitech-logo-2.png',
+		imgAlt: 'Logitech logo',
+	},
+	{
+		id: 5,
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Corsair.svg/2560px-Corsair.svg.png',
+		imgAlt: 'Corsair logo',
+	},
+];

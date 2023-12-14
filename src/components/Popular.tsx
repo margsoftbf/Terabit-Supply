@@ -3,69 +3,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { productsData } from '@/data/data';
 
-const products = [
-	{
-		id: 1,
-		name: 'Leather Long Wallet',
-		color: 'Natural',
-		price: '$75',
-		href: '#',
-		imageSrc:
-			'https://tailwindui.com/img/ecommerce-images/home-page-04-trending-product-02.jpg',
-		imageAlt: 'Hand stitched, orange leather long wallet.',
-	},
-	{
-		id: 2,
-		name: 'Leather Long Wallet',
-		color: 'Natural',
-		price: '$75',
-		href: '#',
-		imageSrc:
-			'https://tailwindui.com/img/ecommerce-images/home-page-04-trending-product-02.jpg',
-		imageAlt: 'Hand stitched, orange leather long wallet.',
-	},
-	{
-		id: 3,
-		name: 'Leather Long Wallet',
-		color: 'Natural',
-		price: '$75',
-		href: '#',
-		imageSrc:
-			'https://tailwindui.com/img/ecommerce-images/home-page-04-trending-product-02.jpg',
-		imageAlt: 'Hand stitched, orange leather long wallet.',
-	},
-	{
-		id: 4,
-		name: 'Leather Long Wallet',
-		color: 'Natural',
-		price: '$75',
-		href: '#',
-		imageSrc:
-			'https://tailwindui.com/img/ecommerce-images/home-page-04-trending-product-02.jpg',
-		imageAlt: 'Hand stitched, orange leather long wallet.',
-	},
-	{
-		id: 4,
-		name: 'Leather Long Wallet',
-		color: 'Natural',
-		price: '$75',
-		href: '#',
-		imageSrc:
-			'https://tailwindui.com/img/ecommerce-images/home-page-04-trending-product-02.jpg',
-		imageAlt: 'Hand stitched, orange leather long wallet.',
-	},
-	{
-		id: 4,
-		name: 'Leather Long Wallet',
-		color: 'Natural',
-		price: '$75',
-		href: '#',
-		imageSrc:
-			'https://tailwindui.com/img/ecommerce-images/home-page-04-trending-product-02.jpg',
-		imageAlt: 'Hand stitched, orange leather long wallet.',
-	},
-];
-
 const Popular = () => {
 	const trendingProducts = productsData.filter((product) => product.isTrending);
 
@@ -110,7 +47,7 @@ const Popular = () => {
 					>
 						{trendingProducts.map((product) => (
 							<SwiperSlide key={product.id} className='relative'>
-								<div className='h-40 w-56 overflow-hidden rounded-md bg-gray-200 border'>
+								<div className='ml-2 h-40 w-56 overflow-hidden rounded-md bg-gray-200 border'>
 									<img
 										src={product.img}
 										alt={product.name}

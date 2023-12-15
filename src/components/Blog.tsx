@@ -39,7 +39,7 @@ const Blog = () => {
 							<div className='relative w-full'>
 								<Image
 									src={post.imageUrl}
-									alt='Opis obrazu'
+									alt='Laptop'
 									width={1920}
 									height={1080}
 									layout='responsive'
@@ -75,7 +75,7 @@ const Blog = () => {
 									<Image
 										src={post.author.imageUrl}
 										alt='Opis obrazu'
-										width={40} 
+										width={40}
 										height={40}
 										layout='fixed'
 									/>
@@ -109,11 +109,15 @@ const Blog = () => {
 								<XMarkIcon className='h-6 w-6' />
 							</button>
 							<div className='flex flex-col items-start justify-between'>
-								<div className='relative mt-6'>
-									<img
+								<div className='relative mt-6 '>
+									<Image
 										src={selectedPost.imageUrl}
-										alt=''
-										className='max-h-96 w-full object-cover rounded-2xl'
+										alt='Laptop picture'
+										layout='responsive'
+										width={16}
+										height={9}
+										objectFit='cover'
+										className='relative max-h-96 w-full object-cover rounded-2xl'
 									/>
 									<div className='absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10' />
 								</div>
@@ -144,11 +148,14 @@ const Blog = () => {
 										</p>
 									</div>
 									<div className='relative mt-8 flex items-center gap-x-4'>
-										<img
-											src={selectedPost.author.imageUrl}
-											alt=''
-											className='h-10 w-10 rounded-full bg-gray-100'
-										/>
+										<div className='h-10 w-10 relative rounded-full overflow-hidden bg-gray-100'>
+											<Image
+												src={selectedPost.author.imageUrl}
+												alt='Photo of author'
+												layout='fill'
+												objectFit='cover'
+											/>
+										</div>
 										<div className='text-sm leading-6'>
 											<p className='font-semibold text-gray-900'>
 												<a href={selectedPost.author.href}>
@@ -162,9 +169,6 @@ const Blog = () => {
 										</div>
 									</div>
 								</div>
-								{/* <h2 className='text-xl font-semibold'>{selectedPost.title}</h2>
-								<p>{selectedPost.description}</p>
-								{/* Tutaj możesz wyświetlić pozostałe informacje o artykule */}
 							</div>
 						</div>
 					</Modal>

@@ -43,6 +43,7 @@ const Hero = () => {
 							height={1080}
 							className='absolute inset-0 z-10 h-full w-full object-cover overflow-hidden'
 							quality={75}
+							priority={true}
 						/>
 
 						<div className='absolute w-full h-full bg-black/50 left-0 z-10'></div>

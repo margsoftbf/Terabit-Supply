@@ -4,7 +4,7 @@ import React from 'react';
 const Footer = () => {
 	return (
 		<footer className='bg-white'>
-			<div className='mx-auto text-center max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8'>
+			<div className='mx-auto text-center max-w-7xl overflow-hidden px-6 py-8 lg:px-8'>
 				<nav
 					className='-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12'
 					aria-label='Footer'

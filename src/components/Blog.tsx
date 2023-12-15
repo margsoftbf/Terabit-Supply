@@ -42,7 +42,6 @@ const Blog = () => {
 									alt='Laptop'
 									width={1920}
 									height={1080}
-									layout='responsive'
 									sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw'
 									className='rounded-2xl bg-gray-100'
 								/>
@@ -74,10 +73,9 @@ const Blog = () => {
 								<div className='relative mt-8 flex items-center gap-x-4'>
 									<Image
 										src={post.author.imageUrl}
-										alt='Opis obrazu'
+										alt='Author photo'
 										width={40}
 										height={40}
-										layout='fixed'
 									/>
 									<div className='text-sm leading-6'>
 										<p className='font-semibold text-gray-900'>
@@ -113,9 +111,8 @@ const Blog = () => {
 									<Image
 										src={selectedPost.imageUrl}
 										alt='Laptop picture'
-										layout='responsive'
-										width={16}
-										height={9}
+										width={1600}
+										height={900}
 										objectFit='cover'
 										className='relative max-h-96 w-full object-cover rounded-2xl'
 									/>
@@ -152,7 +149,8 @@ const Blog = () => {
 											<Image
 												src={selectedPost.author.imageUrl}
 												alt='Photo of author'
-												layout='fill'
+												width={40}
+												height={40}
 												objectFit='cover'
 											/>
 										</div>

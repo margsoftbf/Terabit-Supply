@@ -1,4 +1,5 @@
 import { brands } from '@/data/data';
+import Image from 'next/image';
 
 const Brands = () => {
 	return (
@@ -9,15 +10,16 @@ const Brands = () => {
 				</h2>
 				<div className='absolute border-b border-2 w-full -bottom-2'></div>
 			</div>
-			<div className='mt-12 mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:grid-cols-5'>
+			<div className='mt-12 mx-auto grid max-w-lg items-center gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none grid-cols-1 sm:grid-cols-2 lg:grid-cols-5'>
 				{brands.map((brand) => (
-					<img
+					<Image
 						key={brand.id}
-						className='col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1'
 						src={brand.img}
 						alt={brand.imgAlt}
 						width={158}
 						height={48}
+						layout='responsive'
+						className='col-span-1 max-h-12 w-full object-contain '
 					/>
 				))}
 			</div>

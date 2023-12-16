@@ -4,13 +4,13 @@ const nextConfig = {};
 module.exports = {
 	experimental: { esmExternals: true },
 	images: {
-		domains: [
-			'images.unsplash.com',
-			'upload.wikimedia.org',
-			'l3c.cloud',
-			'microman.co.zw',
-			'www.etp4hpc.eu',
-			'm.media-amazon.com',
+		remotePatterns: [
+			{ hostname: 'images.unsplash.com' },
+			{ hostname: 'upload.wikimedia.org' },
+			{ hostname: 'l3c.cloud' },
+			{ hostname: 'microman.co.zw' },
+			{ hostname: 'www.etp4hpc.eu' },
+			{ hostname: 'm.media-amazon.com' },
 		],
 	},
 };

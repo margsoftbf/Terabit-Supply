@@ -2,7 +2,10 @@ import { aboutUsCards } from '@/data/data';
 
 const Aboutus = () => {
 	return (
-		<div id='aboutus' className='relative isolate overflow-hidden bg-gray-100 py-12'>
+		<div
+			id='aboutus'
+			className='relative isolate overflow-hidden bg-gray-100 py-12'
+		>
 			<div className='mx-auto max-w-7xl px-6 lg:px-8'>
 				<div className='mx-auto max-w-2xl lg:mx-0'>
 					<h2 className='text-4xl font-bold tracking-tight text-black sm:text-6xl'>
@@ -19,10 +22,10 @@ const Aboutus = () => {
 					{aboutUsCards.map((card) => (
 						<div
 							key={card.name}
-							className='flex gap-x-4 rounded-xl bg-white/5 p-6 ring-1 ring-inset ring-white/10 border-2 cursor-pointer hover:border-darkBlue hover:bg-white/10 transition'
+							className='flex gap-x-4 rounded-xl bg-white/5 p-6 ring-1 ring-inset ring-white/10 border-2 cursor-pointer hover:border-myPink hover:bg-white/10 transition'
 						>
 							<card.icon
-								className='h-7 w-5 flex-none text-darkBlue'
+								className='h-7 w-5 flex-none text-myPink'
 								aria-hidden='true'
 							/>
 							<div className='text-base leading-7'>

@@ -30,7 +30,7 @@ const Contact = () => {
 										name='first-name'
 										id='first-name'
 										autoComplete='given-name'
-										className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-darkBlue sm:text-sm sm:leading-6'
+										className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-myPink sm:text-sm sm:leading-6'
 									/>
 								</div>
 							</div>
@@ -47,7 +47,7 @@ const Contact = () => {
 										name='last-name'
 										id='last-name'
 										autoComplete='family-name'
-										className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-darkBlue sm:text-sm sm:leading-6'
+										className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-myPink sm:text-sm sm:leading-6'
 									/>
 								</div>
 							</div>
@@ -64,7 +64,7 @@ const Contact = () => {
 										name='email'
 										id='email'
 										autoComplete='email'
-										className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-darkBlue sm:text-sm sm:leading-6'
+										className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-myPink sm:text-sm sm:leading-6'
 									/>
 								</div>
 							</div>
@@ -81,16 +81,16 @@ const Contact = () => {
 										name='message'
 										id='message'
 										rows={4}
-										className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-darkBlue sm:text-sm sm:leading-6'
+										className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-myPink sm:text-sm sm:leading-6'
 										defaultValue={''}
 									/>
 								</div>
 							</div>
 						</div>
-						<div className='mt-10'>
+						<div className='mt-10 flex items-center justify-end'>
 							<button
 								type='submit'
-								className='block w-full rounded-md bg-darkBlue px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-ownBlue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-darkBlue transition ease-in-out duration-300'
+								className='block w-72 rounded-md bg-myPink px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-myPink/80 transition ease-in-out duration-300'
 							>
 								Submit
 							</button>

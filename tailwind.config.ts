@@ -16,6 +16,11 @@ const config: Config = {
 				darkBlue: '#10598f',
 				ownBlue: '#7FB3D5',
 				ownGray: '#BFC9CA',
+				myPink: '#F38160',
+				myOrange: '#F0B70D',
+				myGray: '#403C39',
+				myYellowLight: '#F8F2E9',
+				myYellowLighter: '#f2eee9',
 			},
 			maxWidth: {
 				'8xl': '1440px',

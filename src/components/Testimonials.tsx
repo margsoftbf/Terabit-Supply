@@ -16,8 +16,8 @@ const Testimonials = () => {
 								key={testimonial.author.handle}
 								className='pt-8 sm:inline-block sm:w-full sm:px-4'
 							>
-								<figure className='rounded-2xl bg-gray-50 p-8 text-sm leading-6'>
-									<blockquote className='text-gray-900'>
+								<figure className='rounded-2xl bg-myYellowLight p-8 text-sm leading-6 border border-myOrange'>
+									<blockquote className='text-gray-900 italic'>
 										<p>{`“${testimonial.body}”`}</p>
 									</blockquote>
 									<figcaption className='mt-6 flex items-center gap-x-4'>

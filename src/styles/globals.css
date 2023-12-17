@@ -3,9 +3,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+	.menu-underline::after {
+		@apply absolute left-0 bottom-0 w-full h-[0.5px] bg-white opacity-20;
+		content: '';
+	}
+
+	.underline-custom {
+		position: relative;
+	}
+
+	.underline-custom::after {
+		content: '';
+		position: absolute;
+		bottom: -5px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 110%;
+		height: 2px;
+		background-color: #F38160;
+		opacity: 0.25;
+	}
+}
+
 #root {
 	margin: 0 auto;
 	padding: 0;
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
+	background-color: #fff;
 }

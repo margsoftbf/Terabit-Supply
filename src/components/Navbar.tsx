@@ -2,7 +2,6 @@
 import { Disclosure } from '@headlessui/react';
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
 import { Bars3Icon, XMarkIcon, HeartIcon } from '@heroicons/react/24/outline';
-import logo from '../../public/assets/logo.webp';
 import { useState, useRef } from 'react';
 import Cart from './Cart';
 import Wishlist from './Wishlist';
@@ -10,7 +9,6 @@ import { useSelector } from 'react-redux';
 import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
 import { navigation, productsData } from '../data/data';
 import { CartItem } from '../types/types';
 import { Popover } from '@headlessui/react';
@@ -27,7 +25,6 @@ const Navbar = () => {
 	const router = useRouter();
 	const [activeLink, setActiveLink] = useState('/');
 	const isHomePage = router.pathname === '/';
-
 	const selectCartItemsCount = (state: { cart: CartState }) => {
 		return Object.values(state.cart.items).reduce(
 			(total: number, item: CartItem) => total + item.quantity,
@@ -75,50 +72,90 @@ const Navbar = () => {
 	};
 
 	return (
-		<Disclosure as='header' className='bg-white shadow sticky top-0 z-50'>
+		<Disclosure
+			as='header'
+			className='sticky top-0 z-[70] header-underline bg-white'
+		>
 			{({ open }) => (
 				<>
-					<div className='mx-auto max-w-8xl px-2 sm:px-4 lg:divide-y lg:divide-gray-200 lg:px-8'>
-						<div className='relative flex h-16 justify-between'>
-							<div className='relative z-10 flex px-2 lg:px-0'>
-								<Link href='/' className='flex flex-shrink-0 items-center'>
-									<Image
-										src={logo}
-										alt='Terabit supply'
-										className='mr-2 h-10 w-10'
-									/>
-									<span className='hidden lg:block font-raleway font-semibold'>
-										<span className='font-extrabold text-darkBlue text-2xl'>
-											T
-										</span>
-										erabit Supply
-									</span>
-								</Link>
-							</div>
-							<div className='relative z-0 flex flex-1 items-center justify-center px-2 sm:absolute sm:inset-0'>
-								<div className='w-full sm:max-w-xs'>
-									<label htmlFor='search' className='sr-only'>
-										Search
-									</label>
-									<div className='relative'>
-										<div className='pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3'>
-											<MagnifyingGlassIcon
-												className='h-5 w-5 text-gray-400'
-												aria-hidden='true'
-											/>
-										</div>
+					<div className='flex items-center justify-between p-2 max-w-8xl mx-auto'>
+						<div className='flex justify-center text-3xl'>
+							<Link href='/' className='-m-1.5 p-1.5'>
+								<h2 className='font-bakilda text-2xl font-raleway font-bold text-center text-myPink'>
+									Terrabit<span className='text-myOrange'>Supply</span>
+								</h2>
+							</Link>
+						</div>
+						<nav
+							className='hidden lg:flex lg:gap-x-4 xl:gap-x-8 lg:ml-12'
+							aria-label='Global'
+						>
+							{navigation.map((item) =>
+								isHomePage ? (
+									<ScrollLink
+										key={item.name}
+										to={item.href}
+										smooth={true}
+										offset={-120}
+										className={`${
+											activeLink === item.href
+												? 'text-myPink underline underline-offset-4'
+												: 'text-myGray  hover:text-myPink'
+										}
+                                    text-sm font-semibold leading-6 text-black font-openSans  ease-in-out duration-300 transition cursor-pointer`}
+										aria-current={activeLink === item.href ? 'page' : undefined}
+										onClick={() => setActiveLink(item.href)}
+									>
+										{item.name}
+									</ScrollLink>
+								) : (
+									<Link key={item.name} href={'/'} passHref legacyBehavior>
+										<a
+											className={`${
+												router.asPath === item.href
+													? 'text-myPink underline underline-offset-4'
+													: 'text-myGray  hover:text-myPink'
+											} inline-flex items-center rounded-md py-2 px-3 text-sm font-medium cursor-pointer`}
+											aria-current={
+												router.asPath === item.href ? 'page' : undefined
+											}
+										>
+											{item.name}
+										</a>
+									</Link>
+								)
+							)}
+						</nav>
+
+						<div className='relative z-10 flex items-center lg:hidden'>
+							<Disclosure.Button className='relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none '>
+								<span className='absolute -inset-0.5' />
+								<span className='sr-only'>Open menu</span>
+								{open ? (
+									<XMarkIcon className='block h-6 w-6' aria-hidden='true' />
+								) : (
+									<Bars3Icon className='block h-6 w-6' aria-hidden='true' />
+								)}
+							</Disclosure.Button>
+						</div>
+						<Popover className='hidden lg:flex text-black lg:items-center font-openSans relative'>
+							<div className='flex items-center w-36'>
+								<div className='w-36 flex'>
+									<div className='w-36 flex'>
+										<a className='text-sm font-semibold p-1 leading-6 text-black hover:text-myOrange ease-in-out duration-300 transition flex items-center gap-x-2 cursor-pointer'>
+											<MagnifyingGlassIcon className='h-5 w-5' />
+										</a>
 										<input
-											id='search'
-											name='search'
-											className='block w-full rounded-md border-0 bg-white py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-darkBlue sm:text-sm sm:leading-6'
-											placeholder='Search'
-											type='search'
+											type='text'
+											placeholder='Search...'
+											className='transition-width duration-300 ease-in-out block w-36 rounded-md border-0 bg-primary py-0.5 pl-1 pr-3 text-black ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset outline-none focus:ring-myPink sm:text-sm sm:leading-6'
+											onClick={(e) => e.stopPropagation()}
 											value={searchTerm}
 											onChange={handleSearchChange}
 										/>
 									</div>
 									{searchTerm && (
-										<div className='absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-md shadow-lg w-full z-10'>
+										<div className='absolute top-full right-0 mt-1 bg-white border border-gray-200 rounded-md shadow-lg w-96 z-10'>
 											{filteredProducts.map((product) => (
 												<Link
 													href={`/product/${product.id}`}
@@ -133,69 +170,16 @@ const Navbar = () => {
 									)}
 								</div>
 							</div>
-							<div className='relative z-10 flex items-center lg:hidden'>
-								<Disclosure.Button className='relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-darkBlue'>
-									<span className='absolute -inset-0.5' />
-									<span className='sr-only'>Open menu</span>
-									{open ? (
-										<XMarkIcon className='block h-6 w-6' aria-hidden='true' />
-									) : (
-										<Bars3Icon className='block h-6 w-6' aria-hidden='true' />
-									)}
-								</Disclosure.Button>
-							</div>
-							<Popover className='hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center'>
-								<Wishlist
-									isWishlistOpen={isWishlistOpen}
-									toggleWishlist={toggleWishlist}
-								/>
-								<Cart
-									isCartOpen={isCartOpen}
-									toggleCart={toggleCart}
-									cartItemsCount={cartItemsCount}
-								/>
-							</Popover>
-						</div>
-						<nav
-							className='hidden lg:flex lg:justify-center lg:space-x-8 lg:py-2'
-							aria-label='Global'
-						>
-							{navigation.map((item) =>
-								isHomePage ? (
-									<ScrollLink
-										key={item.name}
-										to={item.href}
-										smooth={true}
-										offset={-120}
-										className={`${
-											activeLink === item.href
-												? 'bg-gray-200 text-gray-900'
-												: 'text-gray-900 hover:bg-gray-100 hover:text-gray-900'
-										}
-									inline-flex items-center rounded-md py-2 px-3 text-sm font-medium cursor-pointer`}
-										aria-current={activeLink === item.href ? 'page' : undefined}
-										onClick={() => setActiveLink(item.href)}
-									>
-										{item.name}
-									</ScrollLink>
-								) : (
-									<Link key={item.name} href={'/'} passHref legacyBehavior>
-										<a
-											className={`${
-												router.asPath === item.href
-													? 'bg-gray-200 text-gray-900'
-													: 'text-gray-900 hover:bg-gray-100 hover:text-gray-900'
-											} inline-flex items-center rounded-md py-2 px-3 text-sm font-medium cursor-pointer`}
-											aria-current={
-												router.asPath === item.href ? 'page' : undefined
-											}
-										>
-											{item.name}
-										</a>
-									</Link>
-								)
-							)}
-						</nav>
+							<Wishlist
+								isWishlistOpen={isWishlistOpen}
+								toggleWishlist={toggleWishlist}
+							/>
+							<Cart
+								isCartOpen={isCartOpen}
+								toggleCart={toggleCart}
+								cartItemsCount={cartItemsCount}
+							/>
+						</Popover>
 					</div>
 
 					<Disclosure.Panel as='nav' className='lg:hidden' aria-label='Global'>

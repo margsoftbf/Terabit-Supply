@@ -49,7 +49,7 @@ const Cart = ({ isCartOpen, toggleCart, cartItemsCount }: CartProps) => {
 		<div>
 			{showNotification && (
 				<div
-					className='fixed top-5 left-1/2 transform -translate-x-1/2 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded'
+					className='fixed top-5 left-1/2 transform -translate-x-1/2 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded z-100'
 					role='alert'
 				>
 					<span className='block sm:inline'>
@@ -57,7 +57,7 @@ const Cart = ({ isCartOpen, toggleCart, cartItemsCount }: CartProps) => {
 					</span>
 				</div>
 			)}
-			<Popover className='ml-4 flow-root text-sm lg:relative lg:ml-8'>
+			<Popover className='ml-4 flow-root text-sm lg:relative lg:ml-2 z-50'>
 				<Popover.Button
 					onClick={toggleCart}
 					className='group -m-2 flex items-center p-2 outline-none focus:outline-none'
@@ -69,7 +69,6 @@ const Cart = ({ isCartOpen, toggleCart, cartItemsCount }: CartProps) => {
 					<span className='ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800'>
 						{cartItemsCount}
 					</span>
-					
 				</Popover.Button>
 				<Transition
 					show={isCartOpen}
@@ -157,7 +156,7 @@ const Cart = ({ isCartOpen, toggleCart, cartItemsCount }: CartProps) => {
 							<div className='mt-6'>
 								<button
 									onClick={handleCheckout}
-									className='w-full flex items-center justify-center rounded-md border border-transparent bg-darkBlue px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-ownBlue'
+									className='w-full flex items-center justify-center rounded-md border border-transparent bg-myPink px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-myPink/80'
 								>
 									Checkout
 								</button>

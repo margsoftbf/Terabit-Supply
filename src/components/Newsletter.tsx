@@ -2,7 +2,10 @@ import React from 'react';
 
 const Newsletter = () => {
 	return (
-		<div id='newsletter' className='bg-gray-100 py-16 mt-16 sm:py-24 lg:py-32 flex text-center'>
+		<div
+			id='newsletter'
+			className='bg-gray-100 py-16 mt-16 sm:py-24 lg:py-32 flex text-center'
+		>
 			<div className='mx-auto grid max-w-8xl grid-cols-1 gap-10 px-6 lg:grid-cols-12 lg:gap-8 lg:px-8'>
 				<div className='max-w-xl text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:col-span-7'>
 					<h2 className='inline sm:block lg:inline xl:block'>
@@ -23,12 +26,12 @@ const Newsletter = () => {
 							type='email'
 							autoComplete='email'
 							required
-							className='min-w-0 flex-auto rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-darkBlue sm:text-sm sm:leading-6'
+							className='min-w-0 flex-auto rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-myPink sm:text-sm sm:leading-6'
 							placeholder='Enter your email'
 						/>
 						<button
 							type='submit'
-							className='flex-none rounded-md bg-darkBlue px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-ownBlue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ease-in-out transition duration-300'
+							className='flex-none rounded-md bg-myPink px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-myPink/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ease-in-out transition duration-300'
 						>
 							Subscribe
 						</button>
@@ -37,7 +40,7 @@ const Newsletter = () => {
 						We care about your data. Read our{' '}
 						<a
 							href='#'
-							className='font-semibold text-darkBlue hover:text-ownBlue ease-in-out transition duration-300'
+							className='font-semibold text-myOrange hover:text-myOrange/80 ease-in-out transition duration-300'
 						>
 							privacy&nbsp;policy
 						</a>

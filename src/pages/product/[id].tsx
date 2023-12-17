@@ -37,7 +37,7 @@ const Id = () => {
 							<button
 								onClick={() => router.back()}
 								type='button'
-								className='inline-flex items-center gap-x-1.5 rounded-md bg-darkBlue px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-ownBlue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-darkBlue'
+								className='inline-flex items-center gap-x-1.5 rounded-md bg-myOrange px-2.5 py-1.5 text-sm font-semibold font-raleway text-black shadow-sm hover:bg-myOrange/80'
 							>
 								<ArrowLeftIcon className='-ml-0.5 h-5 w-5' aria-hidden='true' />
 								Back
@@ -153,7 +153,7 @@ const Id = () => {
 											type='button'
 											className={`relative block w-full cursor-pointer rounded-lg border p-1 focus:outline-none ${
 												warranty === 'Yes'
-													? 'bg-darkBlue text-white font-semibold'
+													? 'bg-myPink text-white font-semibold'
 													: 'border-gray-300'
 											}`}
 											onClick={() => setWarranty('Yes')}
@@ -164,7 +164,7 @@ const Id = () => {
 											type='button'
 											className={`relative block w-full cursor-pointer rounded-lg border p-1 focus:outline-none ${
 												warranty === 'No'
-													? 'bg-darkBlue text-white font-semibold'
+													? 'bg-myPink text-white font-semibold'
 													: 'border-gray-300'
 											}`}
 											onClick={() => setWarranty('No')}
@@ -177,7 +177,7 @@ const Id = () => {
 									<button
 										onClick={handleAddToCart}
 										type='button'
-										className='flex w-full items-center justify-center rounded-md border border-transparent bg-darkBlue px-8 py-3 text-base font-medium text-white hover:bg-ownBlue focus:outline-none transition-all duration-300 ease-in-out'
+										className='flex w-full items-center justify-center rounded-md border border-transparent bg-myPink px-8 py-3 text-base font-medium text-white hover:bg-myPink/80 focus:outline-none transition-all duration-300 ease-in-out'
 									>
 										Add to cart
 									</button>

@@ -13,9 +13,6 @@ const config: Config = {
 				montserrat: ['Montserrat', 'sans-serif'],
 			},
 			colors: {
-				darkBlue: '#10598f',
-				ownBlue: '#7FB3D5',
-				ownGray: '#BFC9CA',
 				myPink: '#F38160',
 				myOrange: '#F0B70D',
 				myGray: '#403C39',

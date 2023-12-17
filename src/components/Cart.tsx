@@ -66,6 +66,7 @@ const Cart = ({ isCartOpen, toggleCart, cartItemsCount }: CartProps) => {
 						className='h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500 outline-none focus:outline-none'
 						aria-hidden='true'
 					/>
+					<span className='sr-only'>Shopping Bag Icon</span>
 					<span className='ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800'>
 						{cartItemsCount}
 					</span>

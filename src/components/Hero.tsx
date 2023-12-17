@@ -100,7 +100,7 @@ const Hero2 = () => {
 									alt={product.imgAlt}
 									className='rounded-md'
 								/>
-								<h3 className='mt-4 text-xs'>Intel Core i7</h3>
+								<h2 className='mt-4 text-xs'>Intel Core i7</h2>
 								<p className='text-green-700 font-bold font-montserrat mt-1'>
 									${product.price}
 								</p>
@@ -118,7 +118,7 @@ const Hero2 = () => {
 									alt={product2.imgAlt}
 									className='rounded-md'
 								/>
-								<h3 className='mt-4 text-xs'>GeForce RTX 3060</h3>
+								<h2 className='mt-4 text-xs'>GeForce RTX 3060</h2>
 								<p className='text-green-700 font-bold font-montserrat mt-1'>
 									${product2.price}
 								</p>

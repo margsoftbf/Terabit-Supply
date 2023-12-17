@@ -74,6 +74,7 @@ const Hero2 = () => {
 					<div className='w-64 h-80 lg:w-52 lg:h-72 relative rounded-3xl mx-auto mt-12'>
 						<Image
 							src='/assets/hero/gpu-small.webp'
+							loading='lazy'
 							style={imageStyle}
 							fill={true}
 							quality={75}
@@ -81,6 +82,7 @@ const Hero2 = () => {
 						/>
 						<Image
 							src='/assets/hero/procesor-small.webp'
+							loading='lazy'
 							style={imageStyle2}
 							fill={true}
 							quality={75}
@@ -98,7 +100,7 @@ const Hero2 = () => {
 								<img
 									src={product.img}
 									alt={product.imgAlt}
-									className='rounded-md'
+									className='rounded-md w-36 h-full  md:w-48 lg:w-36'
 								/>
 								<h2 className='mt-4 text-xs'>Intel Core i7</h2>
 								<p className='text-green-700 font-bold font-montserrat mt-1'>
@@ -116,7 +118,7 @@ const Hero2 = () => {
 								<img
 									src={product2.img}
 									alt={product2.imgAlt}
-									className='rounded-md'
+									className='rounded-md  w-36 h-full  md:w-48 lg:w-36'
 								/>
 								<h2 className='mt-4 text-xs'>GeForce RTX 3060</h2>
 								<p className='text-green-700 font-bold font-montserrat mt-1'>

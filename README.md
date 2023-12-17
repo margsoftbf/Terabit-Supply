@@ -8,7 +8,7 @@ https://terabit-supply.vercel.app/
 
 ## Screenshoot
 
-![App Screenshoot](https://margsoftbf.github.io/Portfolio/assets/TerabitSupply.webp)
+![App Screenshoot](https://raw.githubusercontent.com/margsoftbf/Portfolio/main/public/assets/TerabitSupply.webp)
 
 ## Download and Installation
 

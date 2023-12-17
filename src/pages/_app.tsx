@@ -5,8 +5,6 @@ import { store } from '../store/store';
 import '../styles/globals.css';
 import Navbar from '../components/Navbar';
 import Footer from '@/components/Footer';
-import Navbar2 from '@/components/Navbar2';
-import Navbar3 from '@/components/Navbar';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
 	return (
@@ -17,9 +15,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 				<link rel='icon' href='/favicon.ico' />
 				<meta httpEquiv='Content-Language' content='en' />
 			</Head>
-			{/* <Navbar /> */}
-			{/* <Navbar2 /> */}
-			<Navbar3 />
+			<Navbar />
 			<Component {...pageProps} />
 			<Footer />
 		</Provider>

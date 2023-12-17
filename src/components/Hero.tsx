@@ -7,15 +7,17 @@ import Image from 'next/image';
 import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
 
-const imageStyle = {
+const imageStyle: React.CSSProperties = {
 	borderRadius: '0.75rem',
 	transform: 'rotate(-10deg)',
 	transformOrigin: 'bottom left',
+	objectFit: 'cover',
 };
-const imageStyle2 = {
+const imageStyle2: React.CSSProperties = {
 	borderRadius: '0.75rem',
 	transform: 'rotate(5deg)',
 	transformOrigin: 'bottom left',
+	objectFit: 'cover',
 };
 
 const Hero2 = () => {
@@ -72,7 +74,6 @@ const Hero2 = () => {
 					<div className='w-64 h-80 lg:w-52 lg:h-72 relative rounded-3xl mx-auto mt-12'>
 						<Image
 							src='/assets/hero/gpu-small.webp'
-							objectFit='cover'
 							style={imageStyle}
 							fill={true}
 							quality={75}
@@ -80,7 +81,6 @@ const Hero2 = () => {
 						/>
 						<Image
 							src='/assets/hero/procesor-small.webp'
-							objectFit='cover'
 							style={imageStyle2}
 							fill={true}
 							quality={75}

@@ -11,6 +11,7 @@ const config: Config = {
 			fontFamily: {
 				raleway: ['Raleway', 'sans-serif'],
 				montserrat: ['Montserrat', 'sans-serif'],
+				body: ['Montserrat', 'sans-serif'],
 			},
 			colors: {
 				myPink: '#F38160',

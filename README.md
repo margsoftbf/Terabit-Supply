@@ -4,7 +4,7 @@ Welcome to Terabit Supply, an advanced e-commerce platform specializing in compu
 
 ## Live preview:
 
-https://terabit-supply.netlify.app/
+https://terabit-supply.vercel.app/
 
 ## Screenshoot
 
